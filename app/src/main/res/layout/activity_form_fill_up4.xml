@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:padding="20dp"
     android:background="#FFEB3B"
-    tools:context=".FormFillUpActivity3">
+    tools:context=".FormFillUpActivity4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,20 +17,42 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Form Page 3"/>
+        android:text="Form Page 4"/>
 
+<!--    additional requirements-->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Spinner
-            android:id="@+id/ppeSpinnerID"
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:tag="PPE Requirements"/>
-
+            android:text="Additional Requirements: "
+            android:textSize="20dp"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pallet jackets"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RF Scanner"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sound Picking"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"/>
+        </RadioGroup>
     </LinearLayout>
 
+<!--    Temperature-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,14 +69,15 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Required"/>
+                android:text="Cold Temperature(-6 to 11 degree)"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not Required"/>
+                android:text="Normal Temperature"/>
         </RadioGroup>
     </LinearLayout>
 
+<!--    License Required-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,65 +86,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Englisgh Requirements: "
+            android:text="License Requirements: "
             android:textSize="20dp"/>
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fluent"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Basic"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Understanding"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reading/Writing"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="N/A"/>
-        </RadioGroup>
-    </LinearLayout>
 
-<!--    Lifting capacity-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lifting Capacity: "
-            android:textSize="20dp"/>
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBox9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5-10 Kg"/>
-            <RadioButton
+                android:layout_weight="1"
+                android:text="White Card" />
+            <CheckBox
+                android:id="@+id/checkBox10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10-15 Kg"/>
-            <RadioButton
+                android:layout_weight="1"
+                android:text="Truck License" />
+            <CheckBox
+                android:id="@+id/checkBox11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15-20 Kg"/>
-            <RadioButton
+                android:layout_weight="1"
+                android:text="Forklift License" />
+            <CheckBox
+                android:id="@+id/checkBox12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="20-25 Kg"/>
-        </RadioGroup>
+                android:layout_weight="1"
+                android:text="N/A" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -131,7 +128,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/backBtn3ID"
+            android:id="@+id/backBtn4ID"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Back"
@@ -139,13 +136,13 @@
             app:backgroundTint="#8BC34A"/>
 
         <Button
-            android:id="@+id/nextPageBtn3ID"
+            android:id="@+id/confirmBtn4ID"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Next Page"
+            android:text="Confirm"
             app:backgroundTint="#8BC34A" />
     </LinearLayout>
-
     </LinearLayout>
+
 
 </ScrollView>

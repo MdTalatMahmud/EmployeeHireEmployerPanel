@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,11 +10,6 @@
     android:background="#FFEB3B"
     tools:context=".FormFillUpActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From: "/>
-
         <Button
             android:id="@+id/startDatePickerBtnID"
             style="?android:spinnerStyle"
@@ -41,14 +35,12 @@
             android:onClick="openDatePicker"
             android:text="JAN 01 2021"
             android:textColor="@color/black"
-            app:backgroundTint="#F6F2F2"
-            app:icon="@android:drawable/ic_menu_my_calendar" />
+            app:backgroundTint="#F6F2F2"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" To: "/>
-
         <Button
             android:id="@+id/endDatePickerBtnID"
             style="?android:spinnerStyle"
@@ -60,8 +52,7 @@
             android:onClick="openDatePicker"
             android:text="JAN 01 2021"
             android:textColor="@color/black"
-            app:backgroundTint="#F6F2F2"
-            app:icon="@android:drawable/ic_menu_my_calendar" />
+            app:backgroundTint="#F6F2F2" />
     </LinearLayout>
 
 
@@ -135,6 +126,6 @@
             android:text="Next Page"
             app:backgroundTint="#8BC34A" />
     </LinearLayout>
-    </LinearLayout>
 
-</ScrollView>
+
+</LinearLayout>

@@ -16,12 +16,21 @@ public class FormFillUpActivity extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog, datePickerDialog2;
     private Button startDateButton, endDateButton;
-    private Button nextPage;
+    private Button nextPage, backPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_fill_up);
+
+        backPage = findViewById(R.id.backBtnID);
+        backPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormFillUpActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         nextPage = findViewById(R.id.nextPageBtnID);
         nextPage.setOnClickListener(new View.OnClickListener() {
