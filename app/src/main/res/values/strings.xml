@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">EmployeeHire</string>
+    <string name="app_name">Employee Hire</string>
+
+    <string-array name="ppe_requirements">
+        <item>Select PPE Requirements</item>
+        <item>Safety Shoes</item>
+        <item>Normal cave shoes</item>
+        <item>Goggles</item>
+        <item>Safety Helmet</item>
+        <item>Gloves/Anti Cutting Gloves</item>
+        <item>Boots</item>
+    </string-array>
+    <string name="test">Company name: Mates Global
+    Person Name: John dev</string>
+
 </resources>
