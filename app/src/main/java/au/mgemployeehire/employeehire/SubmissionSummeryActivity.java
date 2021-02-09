@@ -18,23 +18,17 @@ public class SubmissionSummeryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_submission_summery);
 
         backButton = findViewById(R.id.backSubmissionPageBtnID);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SubmissionSummeryActivity.this, FormFillUpActivity4.class);
-                startActivity(intent);
-            }
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SubmissionSummeryActivity.this, FormFillUpActivity4.class);
+            startActivity(intent);
         });
 
         confirmButton = findViewById(R.id.finalizingBtnID);
-        confirmButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SubmissionSummeryActivity.this, FinalizeMessageActivity.class);
-                startActivity(intent);
-                Toast toast=Toast.makeText(getApplicationContext(),"Submitted",Toast.LENGTH_SHORT);
-                toast.show();
-            }
+        confirmButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SubmissionSummeryActivity.this, FinalizeMessageActivity.class);
+            startActivity(intent);
+            Toast toast=Toast.makeText(getApplicationContext(),"Submitted",Toast.LENGTH_SHORT);
+            toast.show();
         });
     }
 }

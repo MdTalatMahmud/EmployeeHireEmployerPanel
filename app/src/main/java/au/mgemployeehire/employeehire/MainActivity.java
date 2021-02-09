@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button INeedStaffButton;
+    private Button INeedStaffButton, chatButton;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -19,13 +19,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         INeedStaffButton = findViewById(R.id.iNeedStaffBtnId);
+        chatButton = findViewById(R.id.chatWithHRBtnID);
 
-        INeedStaffButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FormFillUpActivity.class);
-                startActivity(intent);
-            }
+        INeedStaffButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FormFillUpActivity.class);
+            startActivity(intent);
+        });
+
+        chatButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+            startActivity(intent);
         });
 
     }

@@ -14,9 +14,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
     <TextView
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:text="Form Page 4"/>
 
 <!--    additional requirements-->
@@ -30,26 +32,30 @@
             android:layout_height="wrap_content"
             android:text="Additional Requirements: "
             android:textSize="20dp"/>
-        <RadioGroup
+        <CheckBox
+
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pallet jackets"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="RF Scanner"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sound Picking"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="N/A"/>
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pallet jackets" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RF Scanner" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sound Picking" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pick Packing" />
     </LinearLayout>
 
 <!--    Temperature-->
@@ -61,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transport Preference: "
+            android:text="Temperature: "
             android:textSize="20dp"/>
         <RadioGroup
             android:layout_width="wrap_content"

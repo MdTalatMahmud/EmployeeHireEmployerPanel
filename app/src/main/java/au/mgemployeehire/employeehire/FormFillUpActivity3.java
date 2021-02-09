@@ -23,28 +23,22 @@ public class FormFillUpActivity3 extends AppCompatActivity implements AdapterVie
         backPage = findViewById(R.id.backBtn3ID);
         nextPage = findViewById(R.id.nextPageBtn3ID);
 
-        backPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FormFillUpActivity3.this, FormFillUpActivity2.class);
-                startActivity(intent);
-            }
+        backPage.setOnClickListener(v -> {
+            Intent intent = new Intent(FormFillUpActivity3.this, FormFillUpActivity2.class);
+            startActivity(intent);
         });
 
-        nextPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FormFillUpActivity3.this, FormFillUpActivity4.class);
-                startActivity(intent);
-            }
+        nextPage.setOnClickListener(v -> {
+            Intent intent = new Intent(FormFillUpActivity3.this, FormFillUpActivity4.class);
+            startActivity(intent);
         });
 
         //spinner PPE requirements
-        Spinner spinner = findViewById(R.id.ppeSpinnerID);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.ppe_requirements, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+//        Spinner spinner = findViewById(R.id.ppeSpinnerID);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.ppe_requirements, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
+//        spinner.setOnItemSelectedListener(this);
     }
 
     @Override

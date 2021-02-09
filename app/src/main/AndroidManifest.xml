@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHire">
-        <activity android:name=".FinalizeMessageActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".FinalizeMessageActivity" />
         <activity android:name=".SubmissionSummeryActivity" />
         <activity android:name=".FormFillUpActivity4" />
         <activity android:name=".FormFillUpActivity3" />

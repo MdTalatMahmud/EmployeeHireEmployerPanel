@@ -18,12 +18,9 @@ public class FinalizeMessageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_finalize_message);
 
         backToHomeButton = findViewById(R.id.backToHomeBtnID);
-        backToHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FinalizeMessageActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        backToHomeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(FinalizeMessageActivity.this, MainActivity.class);
+            startActivity(intent);
         });
     }
 }

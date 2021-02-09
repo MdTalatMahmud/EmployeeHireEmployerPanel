@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="Responsibility: "/>
+            android:text="Job Description: "/>
 
         <EditText
             android:id="@+id/editTextTextMultiLine"
@@ -41,7 +41,24 @@
             android:layout_marginTop="5dp"
             android:ems="13"
             android:inputType="textMultiLine"
-            android:hint="Type Here The Responsibilities"
+            android:hint="Type Here The Job Description"
+            android:background="#F8EB7E"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Your company name: "/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ex. Mates Group"
             android:background="#F8EB7E"/>
     </LinearLayout>
 
@@ -91,23 +108,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mr. John Dev"
-            android:background="#F8EB7E"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Your company name: "/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="ex. Mates Group"
             android:background="#F8EB7E"/>
     </LinearLayout>
 
