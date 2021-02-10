@@ -24,35 +24,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From: "/>
-        <Button
-            android:id="@+id/startDatePickerBtnID"
-            style="?android:spinnerStyle"
+        <TextView
+            android:id="@+id/fromDateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:onClick="openDatePicker"
-            android:text="JAN 01 2021"
-            android:textColor="@color/black"
-            app:backgroundTint="#F6F2F2" />
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="01/01/2020 "/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" To: "/>
-        <Button
-            android:id="@+id/endDatePickerBtnID"
-            style="?android:spinnerStyle"
+        <TextView
+            android:id="@+id/endDateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:onClick="openDatePicker"
-            android:text="JAN 01 2021"
-            android:textColor="@color/black"
-            app:backgroundTint="#F6F2F2" />
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="01/01/2021 "/>
     </LinearLayout>
 
 
