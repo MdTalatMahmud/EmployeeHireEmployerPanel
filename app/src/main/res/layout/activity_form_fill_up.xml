@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:paddingTop="20dp"
+    android:padding="20dp"
     android:background="#FFEB3B"
     tools:context=".FormFillUpActivity">
 
@@ -30,38 +30,27 @@
             android:layout_height="wrap_content"
             android:text="From: "/>
 
-        <Button
-            android:id="@+id/startDatePickerBtnID"
-            style="?android:spinnerStyle"
+        <TextView
+            android:id="@+id/fromDateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:onClick="openDatePicker"
-            android:text="JAN 01 2021"
-            android:textColor="@color/black"
-            app:backgroundTint="#F6F2F2"
-            app:icon="@android:drawable/ic_menu_my_calendar" />
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="01/01/2020 "/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" To: "/>
 
-        <Button
-            android:id="@+id/endDatePickerBtnID"
-            style="?android:spinnerStyle"
+        <TextView
+            android:id="@+id/endDateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:onClick="openDatePicker"
-            android:text="JAN 01 2021"
-            android:textColor="@color/black"
-            app:backgroundTint="#F6F2F2"
-            app:icon="@android:drawable/ic_menu_my_calendar" />
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="01/01/2021 "/>
+
     </LinearLayout>
 
 
@@ -72,69 +61,503 @@
         android:text="What are you searching for?"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/testTVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="testtesttesttest"/>
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Warehouse" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/warehouseCheckBoxID"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkOne"
+                    android:text="Warehouse" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Pick Packer" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Quantity"/>
+        </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cleaner" />
+        android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/pickPackercheckBoxID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="checkOne"
+                android:text="Pick Packer" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"/>
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Process Worker" />
+        android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/cleanerCheckBoxID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="checkOne"
+                android:text="Cleaner" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"/>
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="General Labour" />
+        android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/processWorkerCheckBoxID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="checkOne"
+                android:text="Process Worker" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"/>
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forklift Driver" />
+        android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/generalLabourCheckBoxID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="checkOne"
+                android:text="General Labour" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"/>
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox7"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Other" />
+        android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/forkliftDriverCheckBoxID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Forklift Driver" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkOne"
+                android:hint="Quantity"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/otherCheckBoxID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:onClick="checkOne"
+                android:text="Other" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"/>
+    </LinearLayout>
+
+
+<!--    form 2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Job Description: "/>
+
+            <EditText
+                android:id="@+id/jobDescriptionEDID"
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                android:layout_marginTop="5dp"
+                android:ems="13"
+                android:inputType="textMultiLine"
+                android:hint="Type Here The Job Description"
+                android:background="#F8EB7E"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Your company name: "/>
+            <EditText
+                android:id="@+id/yourCompanyNameETID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ex. Mates Group"
+                android:background="#F8EB7E"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Location: "/>
+
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/suburbETID"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Suburb"
+            android:layout_marginBottom="10dp"
+            android:background="#F8EB7E"/>
+        <EditText
+            android:id="@+id/streetETID"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Street"
+            android:layout_marginBottom="10dp"
+            android:background="#F8EB7E"/>
+        <EditText
+            android:id="@+id/stateETID"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="State"
+            android:layout_marginBottom="10dp"
+            android:background="#F8EB7E"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Name of the person to meet: "/>
+            <EditText
+                android:id="@+id/nameOfThePersonETID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mr. John Dev"
+                android:background="#F8EB7E"/>
+        </LinearLayout>
+
+<!--        phone no-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Phone no: "/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="+61 234567"
+                android:background="#F8EB7E"/>
+        </LinearLayout>
+
+<!--        form 3-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PPE Requirements: "
+            android:textSize="20dp"/>
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Safety Shoes" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Normal cave shoes" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Goggles" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Safety Helmet" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gloves/Anti Cutting Gloves" />
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Boots" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transport Preference: "
+                android:textSize="20dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Required"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Required"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English Requirements: "
+                android:textSize="20dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fluent"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basic"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Understanding"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reading/Writing"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lifting Capacity: "
+                android:textSize="20dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5-10 Kg"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10-15 Kg"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15-20 Kg"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20-25 Kg"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--    additional requirements-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional Requirements: "
+                android:textSize="20dp"/>
+            <CheckBox
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pallet jackets" />
+            <CheckBox
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RF Scanner" />
+            <CheckBox
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sound Picking" />
+            <CheckBox
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pick Packing" />
+        </LinearLayout>
+
+        <!--    Temperature-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature: "
+                android:textSize="20dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cold Temperature(-6 to 11 degree)"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal Temperature"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--    License Required-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="License Requirements: "
+                android:textSize="20dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="White Card" />
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Truck License" />
+                <CheckBox
+                    android:id="@+id/checkBox11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Forklift License" />
+                <CheckBox
+                    android:id="@+id/checkBox12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="N/A" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
 
-        <Button
-            android:id="@+id/backBtnID"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:layout_marginRight="20dp"
-            app:backgroundTint="#8BC34A"/>
+<!--        <Button-->
+<!--            android:id="@+id/backBtnID"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Back"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            app:backgroundTint="#8BC34A"/>-->
 
         <Button
             android:id="@+id/nextPageBtnID"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Next Page"
+            android:text="OK"
             app:backgroundTint="#8BC34A" />
+
     </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

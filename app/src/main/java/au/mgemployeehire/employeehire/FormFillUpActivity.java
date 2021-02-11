@@ -5,147 +5,180 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Stack;
 
 public class FormFillUpActivity extends AppCompatActivity {
 
-    private DatePickerDialog datePickerDialog, datePickerDialog2;
-    private Button startDateButton, endDateButton;
-    private Button nextPage, backPage;
+    private Button nextPage;
+    private TextView fromDate, endDate;
+    DatePickerDialog.OnDateSetListener setListener, setListener2;
+    EditText jobDescription, companyName, suburb, street, state, nameOfThePersonToMeet;
+
+    //job position
+    private CheckBox warehouseCheckBox, pickPackercheckBox, cleanerCheckBox, processWorkerCheckBox, generalLabourCheckBox, forkliftDriverCheckBox, otherCheckBox;
+
+    //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
+    private TextView testTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_fill_up);
 
-        backPage = findViewById(R.id.backBtnID);
-        backPage.setOnClickListener(new View.OnClickListener() {
+        //finding id
+        testTextView=findViewById(R.id.testTVID);
+        companyName = findViewById(R.id.yourCompanyNameETID);
+        suburb = findViewById(R.id.suburbETID);
+        street = findViewById(R.id.streetETID);
+        state = findViewById(R.id.stateETID);
+        nameOfThePersonToMeet = findViewById(R.id.nameOfThePersonETID);
+
+        //Date TextView Functioning
+        fromDate = findViewById(R.id.fromDateID);
+        endDate = findViewById(R.id.endDateID);
+
+        Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        fromDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FormFillUpActivity.this, MainActivity.class);
-                startActivity(intent);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        FormFillUpActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        setListener, year, month, day);
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.show();
             }
         });
 
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month+1;
+                String date = dayOfMonth+"/"+month+"/"+year;
+                fromDate.setText(date);
+            }
+        };
+
+        Calendar calendar2 = Calendar.getInstance();
+        final int year2 = calendar.get(Calendar.YEAR);
+        final int month2 = calendar.get(Calendar.MONTH);
+        final int day2 = calendar.get(Calendar.DAY_OF_MONTH);
+
+        endDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        FormFillUpActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        setListener2, year2, month2, day2);
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.show();
+            }
+        });
+
+        setListener2 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month+1;
+                String date = dayOfMonth+"/"+month+"/"+year;
+                endDate.setText(date);
+            }
+        };
+
+        //position check box id finding
+        warehouseCheckBox = findViewById(R.id.warehouseCheckBoxID);
+        pickPackercheckBox = findViewById(R.id.pickPackercheckBoxID);
+        cleanerCheckBox = findViewById(R.id.cleanerCheckBoxID);
+        processWorkerCheckBox = findViewById(R.id.processWorkerCheckBoxID);
+        generalLabourCheckBox = findViewById(R.id.generalLabourCheckBoxID);
+        forkliftDriverCheckBox = findViewById(R.id.forkliftDriverCheckBoxID);
+        otherCheckBox = findViewById(R.id.otherCheckBoxID);
+
+        jobDescription = findViewById(R.id.jobDescriptionEDID);
+
+        //jobPositionArrayList = new ArrayList<>();
+
+        //ok button functioning
         nextPage = findViewById(R.id.nextPageBtnID);
         nextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FormFillUpActivity.this, FormFillUpActivity2.class);
+                Intent intent = new Intent(FormFillUpActivity.this, SubmissionSummeryActivity.class);
+                //putting the values to the Strings
+                String from_date = (String) fromDate.getText();
+                String to_date = (String) endDate.getText();
+
+                //passing data
+                //from date & to date
+                intent.putExtra("fromDate", from_date);
+                intent.putExtra("toDate", to_date);
+
+                //job post passing
+                String jobPostStr = testTextView.getText().toString();
+                intent.putExtra("jobPost", jobPostStr);
+
+                //job description
+                String jobDesStr = jobDescription.getText().toString();
+                intent.putExtra("jobDesStr", jobDesStr);
+
+                //company name
+                String companyNameStr = companyName.getText().toString();
+                intent.putExtra("companyName",companyNameStr);
+
+                //suburb
+                String suburbStr = suburb.getText().toString();
+                intent.putExtra("suburb", suburbStr);
+
+                //street
+                String streetStr = street.getText().toString();
+                intent.putExtra("street", streetStr);
+
+                //state
+                String stateStr = state.getText().toString();
+                intent.putExtra("state", stateStr);
+
+                String nameOfPersonStr = nameOfThePersonToMeet.getText().toString();
+                intent.putExtra("nameOfPerson", nameOfPersonStr);
+
                 startActivity(intent);
             }
         });
 
-        initStartDatePicker();
-        initEndDatePicker();
-        startDateButton = findViewById(R.id.startDatePickerBtnID);
-        endDateButton = findViewById(R.id.endDatePickerBtnID);
-
-        startDateButton.setText(getTodaysDate());
-        endDateButton.setText(getTodaysDate());
     }
 
-    private String getTodaysDate(){
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        month = month + 1;
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        return makeDateString(day, month, year);
-    }
-
-    private void initStartDatePicker() {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                String date = makeDateString(day, month, year);
-                startDateButton.setText(date);
-            }
-        };
-
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-
-        int style = AlertDialog.THEME_HOLO_LIGHT;
-        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-    }
-    private void initEndDatePicker() {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                String date = makeDateString(day, month, year);
-                endDateButton.setText(date);
-            }
-        };
-
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-
-        int style = AlertDialog.THEME_HOLO_LIGHT;
-        datePickerDialog2 = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-    }
-
-    private String makeDateString(int day, int month, int year){
-        return getMonthFormat(month) + " " + day + " " + year;
-    }
-
-    private String getMonthFormat(int month){
-        if (month==1){
-            return "JAN";
+    public void checkOne(View view){
+        if (warehouseCheckBox.isChecked()){
+            testTextView.setText("Warehouse worker");
+        }else if (pickPackercheckBox.isChecked()){
+            testTextView.setText("Pick Packer");
+        }else if (cleanerCheckBox.isChecked()){
+            testTextView.setText("Cleaner");
+        }else if (processWorkerCheckBox.isChecked()){
+            testTextView.setText("Process Worker");
+        }else if (generalLabourCheckBox.isChecked()){
+            testTextView.setText("General Labour");
+        }else if (forkliftDriverCheckBox.isChecked()){
+            testTextView.setText("Forklift Driver");
+        }else if (otherCheckBox.isChecked()){
+            testTextView.setText("Others");
+        }else {
+            testTextView.setText("");
         }
-        if (month==2){
-            return "FEB";
-        }
-        if (month==3){
-            return "MAR";
-        }
-        if (month==4){
-            return "APR";
-        }
-        if (month==5){
-            return "MAY";
-        }
-        if (month==6){
-            return "JUN";
-        }
-        if (month==7){
-            return "JUL";
-        }
-        if (month==8){
-            return "AUG";
-        }
-        if (month==9){
-            return "SEP";
-        }
-        if (month==10){
-            return "OCT";
-        }
-        if (month==11){
-            return "NOV";
-        }
-        if (month==12){
-            return "DEC";
-        }
-        //default
-        return "JAN";
-    }
-
-    public void openDatePicker(View view){
-        datePickerDialog.show();
-    }
-    public void openDatePicker2(View view){
-        datePickerDialog2.show();
     }
 
 }
