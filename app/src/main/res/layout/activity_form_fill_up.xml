@@ -34,7 +34,7 @@
             android:id="@+id/fromDateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:textSize="17dp"
             android:textStyle="bold"
             android:text="01/01/2020 "/>
 
@@ -47,7 +47,7 @@
             android:id="@+id/endDateID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:textSize="17dp"
             android:textStyle="bold"
             android:text="01/01/2021 "/>
 
@@ -61,11 +61,6 @@
         android:text="What are you searching for?"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"/>
-        <TextView
-            android:id="@+id/testTVID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="testtesttesttest"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -288,6 +283,7 @@
                 android:textStyle="bold"
                 android:text="Phone no: "/>
             <EditText
+                android:id="@+id/phoneETID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="+61 234567"
@@ -348,16 +344,21 @@
                 android:text="Transport Preference: "
                 android:textSize="20dp"/>
             <RadioGroup
+                android:id="@+id/transportRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <RadioButton
+                    android:id="@+id/transportRequired"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Required"/>
+                    android:text="Required"
+                    android:onClick="checkTransport"/>
                 <RadioButton
+                    android:id="@+id/transportNotRequired"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Not Required"/>
+                    android:text="Not Required"
+                    android:onClick="checkTransport"/>
             </RadioGroup>
         </LinearLayout>
 
@@ -372,27 +373,38 @@
                 android:text="English Requirements: "
                 android:textSize="20dp"/>
             <RadioGroup
+                android:id="@+id/englishRequirementRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <RadioButton
+                    android:id="@+id/fluent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="checkEnglishRequirement"
                     android:text="Fluent"/>
                 <RadioButton
+                    android:id="@+id/basic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="checkEnglishRequirement"
                     android:text="Basic"/>
                 <RadioButton
+                    android:id="@+id/understanding"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="checkEnglishRequirement"
                     android:text="Understanding"/>
                 <RadioButton
+                    android:id="@+id/reading_writing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="checkEnglishRequirement"
                     android:text="Reading/Writing"/>
                 <RadioButton
+                    android:id="@+id/na"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="checkEnglishRequirement"
                     android:text="N/A"/>
             </RadioGroup>
         </LinearLayout>
@@ -408,23 +420,32 @@
                 android:text="Lifting Capacity: "
                 android:textSize="20dp"/>
             <RadioGroup
+                android:id="@+id/liftingCapacityRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <RadioButton
+                    android:id="@+id/fiveKg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="liftingCapacity"
                     android:text="5-10 Kg"/>
                 <RadioButton
+                    android:id="@+id/tenKg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="liftingCapacity"
                     android:text="10-15 Kg"/>
                 <RadioButton
+                    android:id="@+id/fifteenKg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="liftingCapacity"
                     android:text="15-20 Kg"/>
                 <RadioButton
+                    android:id="@+id/twentyKg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="liftingCapacity"
                     android:text="20-25 Kg"/>
             </RadioGroup>
         </LinearLayout>
@@ -478,15 +499,20 @@
                 android:text="Temperature: "
                 android:textSize="20dp"/>
             <RadioGroup
+                android:id="@+id/environmentRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <RadioButton
+                    android:id="@+id/minusSix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="environment"
                     android:text="Cold Temperature(-6 to 11 degree)"/>
                 <RadioButton
+                    android:id="@+id/normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="environment"
                     android:text="Normal Temperature"/>
             </RadioGroup>
         </LinearLayout>
@@ -509,25 +535,25 @@
                 android:orientation="vertical">
 
                 <CheckBox
-                    android:id="@+id/checkBox9"
+                    android:id="@+id/whiteCardID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="White Card" />
                 <CheckBox
-                    android:id="@+id/checkBox10"
+                    android:id="@+id/truckLicenseID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Truck License" />
                 <CheckBox
-                    android:id="@+id/checkBox11"
+                    android:id="@+id/forkliftLicenseID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Forklift License" />
                 <CheckBox
-                    android:id="@+id/checkBox12"
+                    android:id="@+id/naLicenseID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -539,6 +565,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:gravity="center">
 
 <!--        <Button-->
@@ -556,7 +583,45 @@
             android:text="OK"
             app:backgroundTint="#8BC34A" />
 
+        <TextView
+            android:id="@+id/testTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"/>
+        <TextView
+            android:id="@+id/transportTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/engRequTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/weightLiftingTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/environmentTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/licenseTVID"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+
     </LinearLayout>
+
 
     </LinearLayout>
 
