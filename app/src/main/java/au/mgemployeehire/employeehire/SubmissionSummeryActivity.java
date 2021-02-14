@@ -55,11 +55,11 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         }
 
         //getting job position
-        Bundle warehouseCB = getIntent().getExtras();
-        if (warehouseCB!=null){
-            String warehouseValue = warehouseCB.getString("jobPost");
-            jobPositionTV.setText(warehouseValue);
-        }
+//        Bundle warehouseCB = getIntent().getExtras();
+//        if (warehouseCB!=null){
+//            String warehouseValue = warehouseCB.getString("jobPost");
+//            jobPositionTV.setText(warehouseValue);
+//        }
 
         //getting job description
         Bundle jobDes = getIntent().getExtras();
@@ -157,6 +157,11 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             additionalRequirementTV.setText(additionalReqValue);
         }
 
+        Bundle jobPosit = getIntent().getExtras();
+        if (jobPosit!=null){
+            String jobPositValue = jobPosit.getString("jobPostition");
+            jobPositionTV.setText(jobPositValue);
+        }
 
     }
 }

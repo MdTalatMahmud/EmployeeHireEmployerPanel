@@ -68,10 +68,10 @@
                     android:id="@+id/warehouseCheckBoxID"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:onClick="checkOne"
                     android:text="Warehouse" />
 
                 <EditText
+                    android:id="@+id/warehouseQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Quantity"/>
@@ -85,9 +85,9 @@
                 android:id="@+id/pickPackercheckBoxID"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:onClick="checkOne"
                 android:text="Pick Packer" />
             <EditText
+                android:id="@+id/pickPackerQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"/>
@@ -101,9 +101,9 @@
                 android:id="@+id/cleanerCheckBoxID"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:onClick="checkOne"
                 android:text="Cleaner" />
             <EditText
+                android:id="@+id/cleanerQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"/>
@@ -117,9 +117,9 @@
                 android:id="@+id/processWorkerCheckBoxID"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:onClick="checkOne"
                 android:text="Process Worker" />
             <EditText
+                android:id="@+id/processWorkerQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"/>
@@ -133,9 +133,9 @@
                 android:id="@+id/generalLabourCheckBoxID"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:onClick="checkOne"
                 android:text="General Labour" />
             <EditText
+                android:id="@+id/generalLabourQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"/>
@@ -151,9 +151,9 @@
                 android:layout_height="wrap_content"
                 android:text="Forklift Driver" />
             <EditText
+                android:id="@+id/forkliftDriverQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="checkOne"
                 android:hint="Quantity"/>
     </LinearLayout>
 
@@ -165,9 +165,9 @@
                 android:id="@+id/otherCheckBoxID"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:onClick="checkOne"
                 android:text="Other" />
             <EditText
+                android:id="@+id/otherQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Quantity"/>
