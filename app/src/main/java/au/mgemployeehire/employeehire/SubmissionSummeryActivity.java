@@ -145,6 +145,18 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             licenseRequiredTV.setText(licenseValue);
         }
 
+        Bundle ppe = getIntent().getExtras();
+        if (ppe!=null){
+            String ppeValue = ppe.getString("ppeReq");
+            ppeTV.setText(ppeValue);
+        }
+
+        Bundle additionalRequirement = getIntent().getExtras();
+        if (additionalRequirement!=null){
+            String additionalReqValue = additionalRequirement.getString("additionalReq");
+            additionalRequirementTV.setText(additionalReqValue);
+        }
+
 
     }
 }

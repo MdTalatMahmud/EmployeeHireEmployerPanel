@@ -15,11 +15,6 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Form Page 1"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,6 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
             android:text="From: "/>
 
         <TextView
@@ -41,6 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
             android:text=" To: "/>
 
         <TextView
@@ -59,7 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What are you searching for?"
-        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="10dp"/>
 
         <LinearLayout
@@ -297,37 +295,37 @@
             android:text="PPE Requirements: "
             android:textSize="20dp"/>
         <CheckBox
-
+            android:id="@+id/safetyShoesID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Safety Shoes" />
         <CheckBox
-
+            android:id="@+id/normalCaveShoesID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Normal cave shoes" />
         <CheckBox
-
+            android:id="@+id/gogglesID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Goggles" />
         <CheckBox
-
+            android:id="@+id/safetyHelmetID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Safety Helmet" />
         <CheckBox
-
+            android:id="@+id/antiCuttingGlovesID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Gloves/Anti Cutting Gloves" />
         <CheckBox
-
+            android:id="@+id/bootsID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -462,25 +460,25 @@
                 android:text="Additional Requirements: "
                 android:textSize="20dp"/>
             <CheckBox
-
+                android:id="@+id/palletJacketID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Pallet jackets" />
             <CheckBox
-
+                android:id="@+id/rfScannerID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RF Scanner" />
             <CheckBox
-
+                android:id="@+id/soundPickingID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Sound Picking" />
             <CheckBox
-
+                android:id="@+id/pickPackingID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -615,7 +613,25 @@
             android:text=""/>
         <TextView
             android:id="@+id/licenseTVID"
-            android:textSize="20dp"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/ppeTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/additionalRequirementTVID"
+            android:textSize="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/jobPositionTVID"
+            android:textSize="1dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""/>

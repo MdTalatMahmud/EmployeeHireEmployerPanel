@@ -32,9 +32,15 @@ public class FormFillUpActivity extends AppCompatActivity {
     private RadioGroup radioGroupTransport, radioGroupEnglishRequirement, radioGroupWeightLifting, radioGroupEnvironment;
 
     //job position
-    private CheckBox warehouseCheckBox, pickPackercheckBox, cleanerCheckBox, processWorkerCheckBox, generalLabourCheckBox, forkliftDriverCheckBox, otherCheckBox;
-    private CheckBox whiteCard, truckLicense, forkliftLicense, naLicense;
+    private CheckBox warehouseCheckBox, pickPackercheckBox, cleanerCheckBox, processWorkerCheckBox, generalLabourCheckBox, forkliftDriverCheckBox, otherCheckBox; //job position CheckBox
+    private CheckBox whiteCard, truckLicense, forkliftLicense, naLicense; //License requirements CheckBox
+    private CheckBox safetyShoes, normalCaveShoes, goggles, safetyHelmet, antiCuttingGloves, boots; //PPE requirements CheckBox
+    private CheckBox palletJacket, rfScanner, soundPicking, pickPacking;
+
     private TextView licenseRequirements;
+    private TextView ppeRequirements;
+    private TextView additionalRequirements;
+    private TextView jobPosition;
 
     //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
     private TextView testTextView, transportTextView, engReqTextView, weightLiftingTextView, environmentTextView;
@@ -66,6 +72,9 @@ public class FormFillUpActivity extends AppCompatActivity {
         environmentTextView = findViewById(R.id.environmentTVID);
 
         licenseRequirements = findViewById(R.id.licenseTVID);
+        ppeRequirements = findViewById(R.id.ppeTVID);
+        additionalRequirements = findViewById(R.id.additionalRequirementTVID);
+        jobPosition = findViewById(R.id.jobPositionTVID);
 
         //Date TextView Functioning
         fromDate = findViewById(R.id.fromDateID);
@@ -121,7 +130,14 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         };
 
-        //position check box id finding
+
+        //additional CheckBox id finding
+        palletJacket = findViewById(R.id.palletJacketID);
+        rfScanner = findViewById(R.id.rfScannerID);
+        soundPicking = findViewById(R.id.soundPickingID);
+        pickPacking = findViewById(R.id.pickPackingID);
+
+        //job position checkBox id finding
         warehouseCheckBox = findViewById(R.id.warehouseCheckBoxID);
         pickPackercheckBox = findViewById(R.id.pickPackercheckBoxID);
         cleanerCheckBox = findViewById(R.id.cleanerCheckBoxID);
@@ -130,15 +146,128 @@ public class FormFillUpActivity extends AppCompatActivity {
         forkliftDriverCheckBox = findViewById(R.id.forkliftDriverCheckBoxID);
         otherCheckBox = findViewById(R.id.otherCheckBoxID);
 
-        //License Requirements check box
+        //License Requirements check box id find
         whiteCard = findViewById(R.id.whiteCardID);
         truckLicense = findViewById(R.id.truckLicenseID);
         forkliftLicense = findViewById(R.id.forkliftLicenseID);
         naLicense = findViewById(R.id.naLicenseID);
 
+        //ppe requirements check box id find
+        safetyShoes = findViewById(R.id.safetyShoesID);
+        normalCaveShoes = findViewById(R.id.normalCaveShoesID);
+        goggles = findViewById(R.id.gogglesID);
+        safetyHelmet = findViewById(R.id.safetyHelmetID);
+        antiCuttingGloves = findViewById(R.id.antiCuttingGlovesID);
+        boots = findViewById(R.id.bootsID);
+
+        //job description
         jobDescription = findViewById(R.id.jobDescriptionEDID);
 
-        //jobPositionArrayList = new ArrayList<>();
+        //Additional Requirement
+        palletJacket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (palletJacket.isChecked()){
+                    palletJacket.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    palletJacket.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        rfScanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rfScanner.isChecked()){
+                    rfScanner.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    rfScanner.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        soundPicking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (soundPicking.isChecked()){
+                    soundPicking.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    soundPicking.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        pickPacking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pickPacking.isChecked()){
+                    pickPacking.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    pickPacking.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+
+
+        //PPE requirements
+        safetyShoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (safetyShoes.isChecked()){
+                    safetyShoes.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    safetyShoes.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        normalCaveShoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (normalCaveShoes.isChecked()){
+                    normalCaveShoes.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    normalCaveShoes.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        goggles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (goggles.isChecked()){
+                    goggles.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    goggles.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        safetyHelmet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (safetyHelmet.isChecked()){
+                    safetyHelmet.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    safetyHelmet.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        antiCuttingGloves.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (antiCuttingGloves.isChecked()){
+                    antiCuttingGloves.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    antiCuttingGloves.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+        boots.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (boots.isChecked()){
+                    boots.setTextColor(getResources().getColor(R.color.teal_200));
+                }else {
+                    boots.setTextColor(getResources().getColor(R.color.white));
+                }
+            }
+        });
+
 
         //License requirements
         whiteCard.setOnClickListener(new View.OnClickListener() {
@@ -217,7 +346,23 @@ public class FormFillUpActivity extends AppCompatActivity {
                 radioButtonEnvironment = findViewById(env);
                 environmentTextView.setText(radioButtonEnvironment.getText());
 
-                //license requirements
+                //additional requirement data collect
+                String additionalRequirementsString = "";
+                if (palletJacket.isChecked()){
+                    additionalRequirementsString += "\n Pallet Jacket";
+                }
+                if (rfScanner.isChecked()){
+                    additionalRequirementsString += "\n RF Scanner";
+                }
+                if (soundPicking.isChecked()){
+                    additionalRequirementsString += "\n Sound Picking";
+                }
+                if (pickPacking.isChecked()){
+                    additionalRequirementsString += "\n Pick Packing";
+                }
+                additionalRequirements.setText(additionalRequirementsString);
+
+                //license requirements data collect
                 String licenseString = "";
                 if (whiteCard.isChecked()){
                     licenseString += "\n White Card";
@@ -232,6 +377,36 @@ public class FormFillUpActivity extends AppCompatActivity {
                     licenseString += "\n N/A";
                 }
                 licenseRequirements.setText(licenseString);
+
+                //ppe requirements data collect
+                String ppeString = "";
+                if (safetyShoes.isChecked()){
+                    ppeString += "\n Safety Shoes";
+                }
+                if (normalCaveShoes.isChecked()){
+                    ppeString += "\n Normal Cave Shoes";
+                }
+                if (goggles.isChecked()){
+                    ppeString += "\n Goggles";
+                }
+                if (safetyHelmet.isChecked()){
+                    ppeString += "\n Safety Helmet";
+                }
+                if (antiCuttingGloves.isChecked()){
+                    ppeString += "\n Anti Cutting Gloves";
+                }
+                if (boots.isChecked()){
+                    ppeString += "\n Boots";
+                }
+                ppeRequirements.setText(ppeString);
+
+                //passing additional requirements
+                String additionalReqStr = additionalRequirements.getText().toString();
+                intent.putExtra("additionalReq",additionalReqStr);
+
+                //passing License requirements
+                String ppeReqStr = ppeRequirements.getText().toString();
+                intent.putExtra("ppeReq",ppeReqStr);
 
                 //passing License requirements
                 String licenseReqStr = licenseRequirements.getText().toString();
