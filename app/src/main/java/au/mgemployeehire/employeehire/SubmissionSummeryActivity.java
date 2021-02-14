@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class SubmissionSummeryActivity extends AppCompatActivity{
 
     private TextView fromDateTV, toDateTV, jobPositionTV, jobDescriptionTV, companyNameTV ,streetTV, suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
-            engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV;
+            engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         liftingCapacityTV = findViewById(R.id.liftingCapacityTVID);
         additionalRequirementTV = findViewById(R.id.additionalRequirementTVID);
         licenseRequiredTV = findViewById(R.id.licenseRequiredTVID);
+        environmentTV = findViewById(R.id.temparatureTVID);
 
         //getting the values
         //getting from date
@@ -54,11 +55,11 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         }
 
         //getting job position
-        Bundle warehouseCB = getIntent().getExtras();
-        if (warehouseCB!=null){
-            String warehouseValue = warehouseCB.getString("jobPost");
-            jobPositionTV.setText(warehouseValue);
-        }
+//        Bundle warehouseCB = getIntent().getExtras();
+//        if (warehouseCB!=null){
+//            String warehouseValue = warehouseCB.getString("jobPost");
+//            jobPositionTV.setText(warehouseValue);
+//        }
 
         //getting job description
         Bundle jobDes = getIntent().getExtras();
@@ -100,6 +101,66 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         if (nameOfPerson!=null){
             String nameOfPersonValue = nameOfPerson.getString("nameOfPerson");
             nameOfThePersonTV.setText(nameOfPersonValue);
+        }
+
+        //getting state
+        Bundle phone = getIntent().getExtras();
+        if (phone!=null){
+            String phoneValue = phone.getString("phone");
+            phoneTV.setText(phoneValue);
+        }
+
+        //getting transport info
+        Bundle transport = getIntent().getExtras();
+        if (transport!=null){
+            String transportValue = transport.getString("transportRequirement");
+            transportRequirementsTV.setText(transportValue);
+        }
+
+        //getting english requirement info
+        Bundle englishRequirement = getIntent().getExtras();
+        if (englishRequirement!=null){
+            String englishRequirementValue = englishRequirement.getString("englishRequirement");
+            engRequirementTV.setText(englishRequirementValue);
+        }
+
+        //getting weight lifting requirement info
+        Bundle weightLift = getIntent().getExtras();
+        if (weightLift!=null){
+            String weightLiftingRequirementValue = weightLift.getString("weightLifting");
+            liftingCapacityTV.setText(weightLiftingRequirementValue);
+        }
+
+        //getting environment info
+        Bundle env = getIntent().getExtras();
+        if (env!=null){
+            String environmentValue = env.getString("environment");
+            environmentTV.setText(environmentValue);
+        }
+
+        //license requirements info getting
+        Bundle license = getIntent().getExtras();
+        if (license!=null){
+            String licenseValue = license.getString("licenseReq");
+            licenseRequiredTV.setText(licenseValue);
+        }
+
+        Bundle ppe = getIntent().getExtras();
+        if (ppe!=null){
+            String ppeValue = ppe.getString("ppeReq");
+            ppeTV.setText(ppeValue);
+        }
+
+        Bundle additionalRequirement = getIntent().getExtras();
+        if (additionalRequirement!=null){
+            String additionalReqValue = additionalRequirement.getString("additionalReq");
+            additionalRequirementTV.setText(additionalReqValue);
+        }
+
+        Bundle jobPosit = getIntent().getExtras();
+        if (jobPosit!=null){
+            String jobPositValue = jobPosit.getString("jobPostition");
+            jobPositionTV.setText(jobPositValue);
         }
 
     }

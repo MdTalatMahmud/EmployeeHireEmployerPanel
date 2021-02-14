@@ -92,18 +92,24 @@
 
         <!--        .......job position code will be here........-->
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Company Name: "/>
-        <TextView
-            android:id="@+id/companyNameTVID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="company name"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Company Name: "/>
+            <TextView
+                android:id="@+id/companyNameTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="company name"/>
+        </LinearLayout>
+
 <!--        job description-->
         <TextView
             android:layout_width="wrap_content"
@@ -176,7 +182,8 @@
 <!--        person to meet-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -299,7 +306,7 @@
                 android:text="RF Scanner"/>
         </LinearLayout>
 
-<!--        Temperature-->
+<!--        License required-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -314,10 +321,27 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="White Card"/>
+                android:text=""/>
         </LinearLayout>
 
 
+<!--        temperature-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Environment: "/>
+            <TextView
+                android:id="@+id/temparatureTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
 
 
 
@@ -348,6 +372,7 @@
                 android:id="@+id/confirmBtnID"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:text="Confirm"
                 app:backgroundTint="#8BC34A" />
         </LinearLayout>
