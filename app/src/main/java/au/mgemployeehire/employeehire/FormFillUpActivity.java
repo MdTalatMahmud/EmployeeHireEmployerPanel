@@ -590,26 +590,6 @@ public class FormFillUpActivity extends AppCompatActivity {
 
     }
 
-//    public void checkOne(View view){
-//        if (warehouseCheckBox.isChecked()){
-//            testTextView.setText("Warehouse worker");
-//        }else if (pickPackercheckBox.isChecked()){
-//            testTextView.setText("Pick Packer");
-//        }else if (cleanerCheckBox.isChecked()){
-//            testTextView.setText("Cleaner");
-//        }else if (processWorkerCheckBox.isChecked()){
-//            testTextView.setText("Process Worker");
-//        }else if (generalLabourCheckBox.isChecked()){
-//            testTextView.setText("General Labour");
-//        }else if (forkliftDriverCheckBox.isChecked()){
-//            testTextView.setText("Forklift Driver");
-//        }else if (otherCheckBox.isChecked()){
-//            testTextView.setText("Others");
-//        }else {
-//            testTextView.setText("");
-//        }
-//    }
-
     //transport radio group
     public void checkTransport(View view){
         int radioId = radioGroupTransport.getCheckedRadioButtonId();
