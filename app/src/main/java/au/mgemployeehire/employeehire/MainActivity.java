@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         chatButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
             startActivity(intent);
         });
 

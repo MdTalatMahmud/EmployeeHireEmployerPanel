@@ -1,5 +1,6 @@
 package au.mgemployeehire.employeehire;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -8,6 +9,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,6 +19,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -48,10 +53,14 @@ public class FormFillUpActivity extends AppCompatActivity {
     //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
     private TextView testTextView, transportTextView, engReqTextView, weightLiftingTextView, environmentTextView;
 
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_fill_up);
+
+        mAuth = FirebaseAuth.getInstance();
 
         //finding id
         testTextView=findViewById(R.id.testTVID);
@@ -549,6 +558,8 @@ public class FormFillUpActivity extends AppCompatActivity {
                 String companyNameStr = companyName.getText().toString();
                 intent.putExtra("companyName",companyNameStr);
 
+
+
                 //suburb
                 String suburbStr = suburb.getText().toString();
                 intent.putExtra("suburb", suburbStr);
@@ -579,26 +590,6 @@ public class FormFillUpActivity extends AppCompatActivity {
 
     }
 
-//    public void checkOne(View view){
-//        if (warehouseCheckBox.isChecked()){
-//            testTextView.setText("Warehouse worker");
-//        }else if (pickPackercheckBox.isChecked()){
-//            testTextView.setText("Pick Packer");
-//        }else if (cleanerCheckBox.isChecked()){
-//            testTextView.setText("Cleaner");
-//        }else if (processWorkerCheckBox.isChecked()){
-//            testTextView.setText("Process Worker");
-//        }else if (generalLabourCheckBox.isChecked()){
-//            testTextView.setText("General Labour");
-//        }else if (forkliftDriverCheckBox.isChecked()){
-//            testTextView.setText("Forklift Driver");
-//        }else if (otherCheckBox.isChecked()){
-//            testTextView.setText("Others");
-//        }else {
-//            testTextView.setText("");
-//        }
-//    }
-
     //transport radio group
     public void checkTransport(View view){
         int radioId = radioGroupTransport.getCheckedRadioButtonId();
@@ -623,6 +614,21 @@ public class FormFillUpActivity extends AppCompatActivity {
         radioButtonEnvironment = findViewById(env);
     }
 
-    //
+    //menu adding
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_layout,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.userSignOutMenuID){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

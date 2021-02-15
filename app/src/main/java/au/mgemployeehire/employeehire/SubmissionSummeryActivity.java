@@ -9,15 +9,23 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SubmissionSummeryActivity extends AppCompatActivity{
 
     private TextView fromDateTV, toDateTV, jobPositionTV, jobDescriptionTV, companyNameTV ,streetTV, suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
             engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV;
 
+    private Button confirmButton;
+    DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submission_summery);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("JobAdvertisementInfo");
 
         //finding id
         fromDateTV = findViewById(R.id.fromDateTVID);
@@ -37,6 +45,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         additionalRequirementTV = findViewById(R.id.additionalRequirementTVID);
         licenseRequiredTV = findViewById(R.id.licenseRequiredTVID);
         environmentTV = findViewById(R.id.temparatureTVID);
+        confirmButton = findViewById(R.id.confirmBtnID);
 
         //getting the values
         //getting from date
@@ -163,5 +172,43 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             jobPositionTV.setText(jobPositValue);
         }
 
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveDataToDatabase();
+            }
+        });
+
+    }
+
+    private void saveDataToDatabase() {
+        String fromDateStr = fromDateTV.getText().toString().trim();
+        String toDateStr = toDateTV.getText().toString().trim();
+        String jobPositionStr = jobPositionTV.getText().toString().trim();
+        String jobDescriptionStr = jobDescriptionTV.getText().toString().trim();
+        String companyNameStr = companyNameTV.getText().toString().trim();
+        String streetStr = streetTV.getText().toString().trim();
+        String suburbStr = suburbTV.getText().toString().trim();
+        String stateStr = stateTV.getText().toString().trim();
+        String nameOfThePersonStr = nameOfThePersonTV.getText().toString().trim();
+        String phoneStr = phoneTV.getText().toString().trim();
+        String ppeStr = ppeTV.getText().toString().trim();
+        String transportRequirementsStr = transportRequirementsTV.getText().toString().trim();
+        String engRequirementStr = engRequirementTV.getText().toString().trim();
+        String liftingCapacityStr = liftingCapacityTV.getText().toString().trim();
+        String additionalRequirementStr = additionalRequirementTV.getText().toString().trim();
+        String licenseRequiredStr = licenseRequiredTV.getText().toString().trim();
+        String environmentStr = environmentTV.getText().toString().trim();
+
+        //key generate
+        String key = databaseReference.push().getKey();
+
+        JobAdvertisementData jobAdvertisement = new JobAdvertisementData(fromDateStr, toDateStr, jobPositionStr, jobDescriptionStr, companyNameStr, streetStr,
+                suburbStr, stateStr, nameOfThePersonStr, phoneStr, ppeStr, transportRequirementsStr, engRequirementStr,
+                liftingCapacityStr, additionalRequirementStr,licenseRequiredStr,environmentStr);
+
+        //sending job advertisement data to database
+        databaseReference.child(key).setValue(jobAdvertisement);
+        Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
     }
 }
