@@ -15,7 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SubmissionSummeryActivity extends AppCompatActivity{
 
     private TextView fromDateTV, toDateTV, jobPositionTV, jobTypeTV, jobDescriptionTV, companyNameTV ,streetTV, suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
-            engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV;
+            engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV, emailTV,
+            supervisorMobileNumberTV, yourNameTV, workSiteStreetTV, workSiteSuburbTV,workSiteStateTV, workerQuantityTV, workingDivisionTV ;
 
     private Button confirmButton;
     DatabaseReference databaseReference;
@@ -47,6 +48,14 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         licenseRequiredTV = findViewById(R.id.licenseRequiredTVID);
         environmentTV = findViewById(R.id.temparatureTVID);
         confirmButton = findViewById(R.id.confirmBtnID);
+        emailTV = findViewById(R.id.emailTVID);
+        supervisorMobileNumberTV = findViewById(R.id.managerMobileNumberTVID);
+        yourNameTV = findViewById(R.id.yourNameTVID);
+        workSiteStreetTV = findViewById(R.id.workSiteStreetTVID);
+        workSiteSuburbTV = findViewById(R.id.workSiteSuburbTVID);
+        workSiteStateTV = findViewById(R.id.workSiteStateTVID);
+        workerQuantityTV = findViewById(R.id.workerQuantityTVID);
+        workingDivisionTV = findViewById(R.id.divisionTVID);
 
         //getting the values
         //getting from date
@@ -85,21 +94,21 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             companyNameTV.setText(companyNameValue);
         }
 
-        //getting suburb
+        //getting company suburb
         Bundle suburb = getIntent().getExtras();
         if (suburb!=null){
             String suburbValue = suburb.getString("suburb");
             suburbTV.setText(suburbValue);
         }
 
-        //getting street
+        //getting company street
         Bundle street = getIntent().getExtras();
         if (street!=null){
             String streetValue = street.getString("street");
             streetTV.setText(streetValue);
         }
 
-        //getting state
+        //getting company state
         Bundle state = getIntent().getExtras();
         if (state!=null){
             String stateValue = state.getString("state");
@@ -182,6 +191,64 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             String jobTypeValue = jobType.getString("jobType");
             jobTypeTV.setText(jobTypeValue);
         }
+
+        //email getting
+        Bundle email = getIntent().getExtras();
+        if (email!=null){
+            String emailValue = email.getString("email");
+            emailTV.setText(emailValue);
+        }
+
+        //supervisor/site manager mobile number
+        Bundle supervisorMobileNo = getIntent().getExtras();
+        if (supervisorMobileNo!=null){
+            String supervisorMobileNumberValue = supervisorMobileNo.getString("managerMobileNumber");
+            supervisorMobileNumberTV.setText(supervisorMobileNumberValue);
+        }
+
+        //your name getting
+        Bundle yourName = getIntent().getExtras();
+        if (yourName!=null){
+            String yourNameStr = yourName.getString("yourName");
+            yourNameTV.setText(yourNameStr);
+        }
+
+        //work site location
+        //work site suburb
+        Bundle worksiteSuburb = getIntent().getExtras();
+        if (worksiteSuburb!=null){
+            String worksiteSuburbStr = worksiteSuburb.getString("workSiteSuburb");
+            workSiteSuburbTV.setText(worksiteSuburbStr);
+        }
+
+        //work site street
+        Bundle worksiteStreet = getIntent().getExtras();
+        if (worksiteStreet!=null){
+            String worksiteStreetStr = worksiteStreet.getString("workSiteStreet");
+            workSiteStreetTV.setText(worksiteStreetStr);
+        }
+
+        //work site
+        Bundle workSiteState = getIntent().getExtras();
+        if (workSiteState!=null){
+            String workSiteStateStr = workSiteState.getString("workSiteState");
+            workSiteStateTV.setText(workSiteStateStr);
+        }
+
+        //worker quantity
+        Bundle workerQuantity = getIntent().getExtras();
+        if (workerQuantity!=null){
+            String workerQuantityStr = workerQuantity.getString("workerQuantity");
+            workerQuantityTV.setText(workerQuantityStr);
+        }
+
+        //working division
+        Bundle workingDivision = getIntent().getExtras();
+        if (workingDivision!=null){
+            String workingDivisionStr = workingDivision.getString("workingDivision");
+            workingDivisionTV.setText(workingDivisionStr);
+        }
+
 
         //functioning confirm button. Sending data to firebase Database
         confirmButton.setOnClickListener(new View.OnClickListener() {

@@ -10,16 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHire">
         <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignupActivity">
+
+        </activity>
+        <activity android:name=".SigninActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity android:name=".SignupActivity">
 
-        </activity>
-        <activity android:name=".SigninActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".FinalizeMessageActivity" />
         <activity android:name=".SubmissionSummeryActivity" />
@@ -27,11 +34,11 @@
         <activity android:name=".FormFillUpActivity3" />
         <activity android:name=".FormFillUpActivity2" />
         <activity android:name=".FormFillUpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".MainActivity">
 

@@ -36,7 +36,6 @@
         </LinearLayout>
 
 <!--        Company Location-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,12 +82,13 @@
                 android:text="Your name: "/>
             <EditText
                 android:id="@+id/yourNameETID"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="Mr. Express"
                 android:background="#F8EB7E"/>
         </LinearLayout>
 
+<!--        your email-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,6 +105,12 @@
                 android:layout_height="wrap_content"
                 android:hint="email@email.com"
                 android:background="#F8EB7E"/>
+            <TextView
+                android:id="@+id/yourEmailTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="1dp"
+                android:visibility="invisible"/>
         </LinearLayout>
 
         <!--       your phone no-->
@@ -138,10 +144,10 @@
                 android:textStyle="bold"
                 android:text="Site Supervisor/Manager Name: "/>
             <EditText
-                android:id="@+id/supervisorNameETID"
+                android:id="@+id/nameOfThePersonETID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mr. David"
+                android:hint="Mr. John Dev"
                 android:background="#F8EB7E"/>
         </LinearLayout>
 
@@ -354,6 +360,23 @@
                 android:onClick="jobPosition"/>
         </RadioGroup>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Quantity: "/>
+            <EditText
+                android:id="@+id/workerQuantityETID"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:background="#F8EB7E"
+                android:hint="5"/>
+        </LinearLayout>
+
+
 <!--        <CheckBox-->
 <!--            android:id="@+id/warehouseCheckBoxID"-->
 <!--            android:layout_width="150dp"-->
@@ -480,23 +503,7 @@
 
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="Name of the person to meet: "/>
-            <EditText
-                android:id="@+id/nameOfThePersonETID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Mr. John Dev"
-                android:background="#F8EB7E"/>
-        </LinearLayout>
+
 
 
 

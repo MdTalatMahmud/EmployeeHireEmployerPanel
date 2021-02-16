@@ -35,6 +35,7 @@
         android:id="@+id/gotoSignUpTVID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="17dp"
         android:text="Don't have an account? Sign up"/>
     <ProgressBar
         android:id="@+id/signinProgressBarID"
