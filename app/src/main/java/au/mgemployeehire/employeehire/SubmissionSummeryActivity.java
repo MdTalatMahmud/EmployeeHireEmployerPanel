@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SubmissionSummeryActivity extends AppCompatActivity{
 
-    private TextView fromDateTV, toDateTV, jobPositionTV, jobDescriptionTV, companyNameTV ,streetTV, suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
+    private TextView fromDateTV, toDateTV, jobPositionTV, jobTypeTV, jobDescriptionTV, companyNameTV ,streetTV, suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
             engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV;
 
     private Button confirmButton;
@@ -31,6 +31,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         fromDateTV = findViewById(R.id.fromDateTVID);
         toDateTV = findViewById(R.id.toDateTVID);
         jobPositionTV = findViewById(R.id.jobPositionTVID);
+        jobTypeTV = findViewById(R.id.jobTypeInfoTVID);
         jobDescriptionTV = findViewById(R.id.jobDescriptionTVID);
         companyNameTV = findViewById(R.id.companyNameTVID);
         streetTV = findViewById(R.id.streetTVID);
@@ -154,24 +155,35 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             licenseRequiredTV.setText(licenseValue);
         }
 
+        //ppe requirements info getting
         Bundle ppe = getIntent().getExtras();
         if (ppe!=null){
             String ppeValue = ppe.getString("ppeReq");
             ppeTV.setText(ppeValue);
         }
 
+        //additional requirements info getting
         Bundle additionalRequirement = getIntent().getExtras();
         if (additionalRequirement!=null){
             String additionalReqValue = additionalRequirement.getString("additionalReq");
             additionalRequirementTV.setText(additionalReqValue);
         }
 
+        //job position info getting
         Bundle jobPosit = getIntent().getExtras();
         if (jobPosit!=null){
             String jobPositValue = jobPosit.getString("jobPostition");
             jobPositionTV.setText(jobPositValue);
         }
 
+        //job type info getting
+        Bundle jobType = getIntent().getExtras();
+        if (jobType!=null){
+            String jobTypeValue = jobType.getString("jobType");
+            jobTypeTV.setText(jobTypeValue);
+        }
+
+        //functioning confirm button. Sending data to firebase Database
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -210,5 +222,8 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         //sending job advertisement data to database
         databaseReference.child(key).setValue(jobAdvertisement);
         Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(SubmissionSummeryActivity.this, FormFillUpActivity.class);
+        startActivity(intent);
     }
 }

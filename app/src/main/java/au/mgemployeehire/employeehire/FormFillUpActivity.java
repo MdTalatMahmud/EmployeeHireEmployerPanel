@@ -33,14 +33,14 @@ public class FormFillUpActivity extends AppCompatActivity {
     private TextView fromDate, endDate;
     DatePickerDialog.OnDateSetListener setListener, setListener2;
     EditText jobDescription, companyName, suburb, street, state, nameOfThePersonToMeet, phone;
-    private RadioButton radioButtonTransport, radioButtonEnglishRequirement, radioButtonWeightLifting, radioButtonEnvironment;
-    private RadioGroup radioGroupTransport, radioGroupEnglishRequirement, radioGroupWeightLifting, radioGroupEnvironment;
+    private RadioButton radioButtonJobPosition,radioButtonjobType,radioButtonTransport, radioButtonEnglishRequirement, radioButtonWeightLifting, radioButtonEnvironment;
+    private RadioGroup jobPositionRadioGroup,radioGroupJobType,radioGroupTransport, radioGroupEnglishRequirement, radioGroupWeightLifting, radioGroupEnvironment;
 
     //quantity of staff
     private EditText warehouseQuantityEditText,pickPackerQuantityEditText,cleanerQuantityEditText,processWorkerQuantityEditText,generalLabourQuantityEditText,forkliftDriverQuantityEditText,otherQuantityEditText;
 
     //job position
-    private CheckBox warehouseCheckBox, pickPackercheckBox, cleanerCheckBox, processWorkerCheckBox, generalLabourCheckBox, forkliftDriverCheckBox, otherCheckBox; //job position CheckBox
+    //private CheckBox warehouseCheckBox, pickPackercheckBox, cleanerCheckBox, processWorkerCheckBox, generalLabourCheckBox, forkliftDriverCheckBox, otherCheckBox; //job position CheckBox
     private CheckBox whiteCard, truckLicense, forkliftLicense, naLicense; //License requirements CheckBox
     private CheckBox safetyShoes, normalCaveShoes, goggles, safetyHelmet, antiCuttingGloves, boots; //PPE requirements CheckBox
     private CheckBox palletJacket, rfScanner, soundPicking, pickPacking; //additional requirements CheckBox
@@ -48,7 +48,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     private TextView licenseRequirements;
     private TextView ppeRequirements;
     private TextView additionalRequirements;
-    private TextView jobPosition;
+    private TextView jobPosition, jobType;
 
     //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
     private TextView testTextView, transportTextView, engReqTextView, weightLiftingTextView, environmentTextView;
@@ -71,14 +71,21 @@ public class FormFillUpActivity extends AppCompatActivity {
         nameOfThePersonToMeet = findViewById(R.id.nameOfThePersonETID);
         phone = findViewById(R.id.phoneETID);
 
-        //quantity EditText id finding
-        warehouseQuantityEditText = findViewById(R.id.warehouseQuantity);
-        pickPackerQuantityEditText = findViewById(R.id.pickPackerQuantity);
-        cleanerQuantityEditText = findViewById(R.id.cleanerQuantity);
-        processWorkerQuantityEditText = findViewById(R.id.processWorkerQuantity);
-        generalLabourQuantityEditText = findViewById(R.id.generalLabourQuantity);
-        forkliftDriverQuantityEditText = findViewById(R.id.forkliftDriverQuantity);
-        otherQuantityEditText = findViewById(R.id.otherQuantity);
+//        //quantity EditText id finding
+//        warehouseQuantityEditText = findViewById(R.id.warehouseQuantity);
+//        pickPackerQuantityEditText = findViewById(R.id.pickPackerQuantity);
+//        cleanerQuantityEditText = findViewById(R.id.cleanerQuantity);
+//        processWorkerQuantityEditText = findViewById(R.id.processWorkerQuantity);
+//        generalLabourQuantityEditText = findViewById(R.id.generalLabourQuantity);
+//        forkliftDriverQuantityEditText = findViewById(R.id.forkliftDriverQuantity);
+//        otherQuantityEditText = findViewById(R.id.otherQuantity);
+
+        //radio groups id finding
+        jobPositionRadioGroup = findViewById(R.id.jobPositionRadioGroup);
+        jobPosition = findViewById(R.id.jobPositionTVID);
+
+        radioGroupJobType = findViewById(R.id.jobTypeRadioGroup);
+        jobType = findViewById(R.id.jobTypeTVID);
 
         radioGroupTransport = findViewById(R.id.transportRadioGroup);
         transportTextView = findViewById(R.id.transportTVID);
@@ -95,7 +102,7 @@ public class FormFillUpActivity extends AppCompatActivity {
         licenseRequirements = findViewById(R.id.licenseTVID);
         ppeRequirements = findViewById(R.id.ppeTVID);
         additionalRequirements = findViewById(R.id.additionalRequirementTVID);
-        jobPosition = findViewById(R.id.jobPositionTVID);
+
 
         //Date TextView Functioning
         fromDate = findViewById(R.id.fromDateID);
@@ -159,13 +166,13 @@ public class FormFillUpActivity extends AppCompatActivity {
         pickPacking = findViewById(R.id.pickPackingID);
 
         //job position checkBox id finding
-        warehouseCheckBox = findViewById(R.id.warehouseCheckBoxID);
-        pickPackercheckBox = findViewById(R.id.pickPackercheckBoxID);
-        cleanerCheckBox = findViewById(R.id.cleanerCheckBoxID);
-        processWorkerCheckBox = findViewById(R.id.processWorkerCheckBoxID);
-        generalLabourCheckBox = findViewById(R.id.generalLabourCheckBoxID);
-        forkliftDriverCheckBox = findViewById(R.id.forkliftDriverCheckBoxID);
-        otherCheckBox = findViewById(R.id.otherCheckBoxID);
+//        warehouseCheckBox = findViewById(R.id.warehouseCheckBoxID);
+//        pickPackercheckBox = findViewById(R.id.pickPackercheckBoxID);
+//        cleanerCheckBox = findViewById(R.id.cleanerCheckBoxID);
+//        processWorkerCheckBox = findViewById(R.id.processWorkerCheckBoxID);
+//        generalLabourCheckBox = findViewById(R.id.generalLabourCheckBoxID);
+//        forkliftDriverCheckBox = findViewById(R.id.forkliftDriverCheckBoxID);
+//        otherCheckBox = findViewById(R.id.otherCheckBoxID);
 
         //License Requirements check box id find
         whiteCard = findViewById(R.id.whiteCardID);
@@ -185,76 +192,76 @@ public class FormFillUpActivity extends AppCompatActivity {
         jobDescription = findViewById(R.id.jobDescriptionEDID);
 
         //job position requirement
-        warehouseCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (warehouseCheckBox.isChecked()){
-                    warehouseCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    warehouseCheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
-        pickPackercheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (pickPackercheckBox.isChecked()){
-                    pickPackercheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    pickPackercheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
-        cleanerCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (cleanerCheckBox.isChecked()){
-                    cleanerCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    cleanerCheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
-        processWorkerCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (processWorkerCheckBox.isChecked()){
-                    processWorkerCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    processWorkerCheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
-        generalLabourCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (generalLabourCheckBox.isChecked()){
-                    generalLabourCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    generalLabourCheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
-        forkliftDriverCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (forkliftDriverCheckBox.isChecked()){
-                    forkliftDriverCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    forkliftDriverCheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
-        otherCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (otherCheckBox.isChecked()){
-                    otherCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
-                }else {
-                    otherCheckBox.setTextColor(getResources().getColor(R.color.white));
-                }
-            }
-        });
+//        warehouseCheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (warehouseCheckBox.isChecked()){
+//                    warehouseCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    warehouseCheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
+//        pickPackercheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (pickPackercheckBox.isChecked()){
+//                    pickPackercheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    pickPackercheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
+//        cleanerCheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (cleanerCheckBox.isChecked()){
+//                    cleanerCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    cleanerCheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
+//        processWorkerCheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (processWorkerCheckBox.isChecked()){
+//                    processWorkerCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    processWorkerCheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
+//        generalLabourCheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (generalLabourCheckBox.isChecked()){
+//                    generalLabourCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    generalLabourCheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
+//        forkliftDriverCheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (forkliftDriverCheckBox.isChecked()){
+//                    forkliftDriverCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    forkliftDriverCheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
+//        otherCheckBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (otherCheckBox.isChecked()){
+//                    otherCheckBox.setTextColor(getResources().getColor(R.color.teal_200));
+//                }else {
+//                    otherCheckBox.setTextColor(getResources().getColor(R.color.white));
+//                }
+//            }
+//        });
 
         //Additional Requirement
         palletJacket.setOnClickListener(new View.OnClickListener() {
@@ -419,6 +426,16 @@ public class FormFillUpActivity extends AppCompatActivity {
                 intent.putExtra("fromDate", from_date);
                 intent.putExtra("toDate", to_date);
 
+                //job position
+                int radioID_jobPosition = jobPositionRadioGroup.getCheckedRadioButtonId();
+                radioButtonJobPosition = findViewById(radioID_jobPosition);
+                jobPosition.setText(radioButtonJobPosition.getText());
+
+                //job type
+                int jobTypeRadioID = radioGroupJobType.getCheckedRadioButtonId();
+                radioButtonjobType = findViewById(jobTypeRadioID);
+                jobType.setText(radioButtonjobType.getText());
+
                 //transport
                 int radioId = radioGroupTransport.getCheckedRadioButtonId();
                 radioButtonTransport = findViewById(radioId);
@@ -440,29 +457,29 @@ public class FormFillUpActivity extends AppCompatActivity {
                 environmentTextView.setText(radioButtonEnvironment.getText());
 
                 //job position data collect
-                String jobPositionString = "";
-                if (warehouseCheckBox.isChecked()){
-                    jobPositionString += "\n Warehouse";
-                }
-                if (pickPackercheckBox.isChecked()){
-                    jobPositionString += "\n Pick Packer";
-                }
-                if (cleanerCheckBox.isChecked()){
-                    jobPositionString += "\n Cleaner";
-                }
-                if (processWorkerCheckBox.isChecked()){
-                    jobPositionString += "\n Process Worker";
-                }
-                if (generalLabourCheckBox.isChecked()){
-                    jobPositionString += "\n General Labour";
-                }
-                if (forkliftDriverCheckBox.isChecked()){
-                    jobPositionString += "\n Forklift Driver";
-                }
-                if (otherCheckBox.isChecked()){
-                    jobPositionString += "\n Others";
-                }
-                jobPosition.setText(jobPositionString);
+//                String jobPositionString = "";
+//                if (warehouseCheckBox.isChecked()){
+//                    jobPositionString += "\n Warehouse";
+//                }
+//                if (pickPackercheckBox.isChecked()){
+//                    jobPositionString += "\n Pick Packer";
+//                }
+//                if (cleanerCheckBox.isChecked()){
+//                    jobPositionString += "\n Cleaner";
+//                }
+//                if (processWorkerCheckBox.isChecked()){
+//                    jobPositionString += "\n Process Worker";
+//                }
+//                if (generalLabourCheckBox.isChecked()){
+//                    jobPositionString += "\n General Labour";
+//                }
+//                if (forkliftDriverCheckBox.isChecked()){
+//                    jobPositionString += "\n Forklift Driver";
+//                }
+//                if (otherCheckBox.isChecked()){
+//                    jobPositionString += "\n Others";
+//                }
+//                jobPosition.setText(jobPositionString);
 
                 //additional requirement data collect
                 String additionalRequirementsString = "";
@@ -521,6 +538,10 @@ public class FormFillUpActivity extends AppCompatActivity {
                 //passing job position
                 String jobPositionStr = jobPosition.getText().toString();
                 intent.putExtra("jobPostition",jobPositionStr);
+
+                //passing job type
+                String jobTypeStr = jobType.getText().toString();
+                intent.putExtra("jobType",jobTypeStr);
 
                 //passing additional requirements
                 String additionalReqStr = additionalRequirements.getText().toString();
@@ -588,6 +609,18 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    //job position radio group
+    public void jobPosition(View view){
+        int jobPositionRadioID = jobPositionRadioGroup.getCheckedRadioButtonId();
+        radioButtonJobPosition = findViewById(jobPositionRadioID);
+    }
+
+    //job type
+    public void jobType(View view){
+        int jobTypeID = radioGroupJobType.getCheckedRadioButtonId();
+        radioButtonjobType = findViewById(jobTypeID);
     }
 
     //transport radio group
