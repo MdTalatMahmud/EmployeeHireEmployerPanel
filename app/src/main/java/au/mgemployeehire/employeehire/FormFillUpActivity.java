@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -19,18 +20,22 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Stack;
+import java.util.TimeZone;
 
 public class FormFillUpActivity extends AppCompatActivity {
 
     private Button nextPage;
-    private TextView fromDate, endDate;
+    private TextView fromDate, endDate, startTime, endTime;
     DatePickerDialog.OnDateSetListener setListener, setListener2;
     EditText jobDescription, companyName, suburb, street, state, nameOfThePersonToMeet, phone;
     private RadioButton radioButtonJobPosition,radioButtonjobType,radioButtonTransport, radioButtonEnglishRequirement, radioButtonWeightLifting, radioButtonEnvironment;
@@ -47,7 +52,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     private TextView ppeRequirements;
     private TextView additionalRequirements;
     private TextView jobPosition, jobType;
-    private TextView yourEmailTextView;
+
 
     //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
     private TextView testTextView, transportTextView, engReqTextView, weightLiftingTextView, environmentTextView;
@@ -78,8 +83,7 @@ public class FormFillUpActivity extends AppCompatActivity {
         workerQuantityEditText = findViewById(R.id.workerQuantityETID);
         divisionEditText = findViewById(R.id.divisionETID);
 
-        //TextView ID finding
-        yourEmailTextView = findViewById(R.id.yourEmailTVID);
+
 
         //radio groups id finding
         jobPositionRadioGroup = findViewById(R.id.jobPositionRadioGroup);
@@ -103,6 +107,58 @@ public class FormFillUpActivity extends AppCompatActivity {
         licenseRequirements = findViewById(R.id.licenseTVID);
         ppeRequirements = findViewById(R.id.ppeTVID);
         additionalRequirements = findViewById(R.id.additionalRequirementTVID);
+
+        //time table setup
+        startTime = findViewById(R.id.startTimeSelectID);
+        endTime = findViewById(R.id.endTimeSelectID);
+
+        //startTime TextView functioning
+        startTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialogStartTime = new TimePickerDialog(
+                        FormFillUpActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
+                                calendar.set(Calendar.MINUTE, minute);
+                                calendar.setTimeZone(TimeZone.getDefault());
+                                SimpleDateFormat format = new SimpleDateFormat("hh:mm aa");
+                                String time = format.format(calendar.getTime());
+                                startTime.setText(time);
+                            }
+                        },12,0,false);
+                        timePickerDialogStartTime.show();
+//                );
+            }
+        });
+
+        //endTime TextView Functioning
+        endTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialogStartTime = new TimePickerDialog(
+                        FormFillUpActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
+                                calendar.set(Calendar.MINUTE, minute);
+                                calendar.setTimeZone(TimeZone.getDefault());
+                                SimpleDateFormat format = new SimpleDateFormat("hh:mm aa");
+                                String time = format.format(calendar.getTime());
+                                endTime.setText(time);
+                            }
+                        },12,0,false);
+                timePickerDialogStartTime.show();
+//                );
+            }
+        });
 
 
         //Date TextView Functioning
@@ -433,6 +489,14 @@ public class FormFillUpActivity extends AppCompatActivity {
                 ppeRequirements.setText(ppeString);
 
                 //.............................................passing data
+
+                //time table passing
+                String startTimeStr = startTime.getText().toString();
+                intent.putExtra("startTime",startTimeStr);
+
+                String endTimeStr = endTime.getText().toString();
+                intent.putExtra("endTime",endTimeStr);
+
                 //working division
                 String workingDivisionStr = divisionEditText.getText().toString();
                 intent.putExtra("workingDivision", workingDivisionStr);

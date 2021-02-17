@@ -14,9 +14,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SubmissionSummeryActivity extends AppCompatActivity{
 
-    private TextView fromDateTV, toDateTV, jobPositionTV, jobTypeTV, jobDescriptionTV, companyNameTV ,streetTV, suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
+    private TextView fromDateTV, toDateTV, jobPositionTV, jobTypeTV, jobDescriptionTV, companyNameTV ,streetTV,
+            suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
             engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV, emailTV,
-            supervisorMobileNumberTV, yourNameTV, workSiteStreetTV, workSiteSuburbTV,workSiteStateTV, workerQuantityTV, workingDivisionTV ;
+            supervisorMobileNumberTV, yourNameTV, workSiteStreetTV, workSiteSuburbTV,
+            workSiteStateTV, workerQuantityTV, workingDivisionTV, startTimeTV, endTimeTV ;//26 variables
 
     private Button confirmButton;
     DatabaseReference databaseReference;
@@ -56,6 +58,8 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         workSiteStateTV = findViewById(R.id.workSiteStateTVID);
         workerQuantityTV = findViewById(R.id.workerQuantityTVID);
         workingDivisionTV = findViewById(R.id.divisionTVID);
+        startTimeTV = findViewById(R.id.startTimeTVID);
+        endTimeTV = findViewById(R.id.endTimeTVID);
 
         //getting the values
         //getting from date
@@ -72,13 +76,6 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             String toDatevalue = toDate.getString("toDate");
             toDateTV.setText(toDatevalue);
         }
-
-        //getting job position
-//        Bundle warehouseCB = getIntent().getExtras();
-//        if (warehouseCB!=null){
-//            String warehouseValue = warehouseCB.getString("jobPost");
-//            jobPositionTV.setText(warehouseValue);
-//        }
 
         //getting job description
         Bundle jobDes = getIntent().getExtras();
@@ -249,6 +246,20 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             workingDivisionTV.setText(workingDivisionStr);
         }
 
+        //start time getting
+        Bundle startTime = getIntent().getExtras();
+        if (startTime!=null){
+            String startTimeStr = startTime.getString("startTime");
+            startTimeTV.setText(startTimeStr);
+        }
+
+        //end time getting
+        Bundle endTime = getIntent().getExtras();
+        if (endTime!=null){
+            String endTimeStr = endTime.getString("endTime");
+            endTimeTV.setText(endTimeStr);
+        }
+
 
         //functioning confirm button. Sending data to firebase Database
         confirmButton.setOnClickListener(new View.OnClickListener() {
@@ -269,7 +280,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         String streetStr = streetTV.getText().toString().trim();
         String suburbStr = suburbTV.getText().toString().trim();
         String stateStr = stateTV.getText().toString().trim();
-        String nameOfThePersonStr = nameOfThePersonTV.getText().toString().trim();
+        String nameOfThePersonStr = nameOfThePersonTV.getText().toString().trim();//site manager name
         String phoneStr = phoneTV.getText().toString().trim();
         String ppeStr = ppeTV.getText().toString().trim();
         String transportRequirementsStr = transportRequirementsTV.getText().toString().trim();
@@ -277,7 +288,18 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         String liftingCapacityStr = liftingCapacityTV.getText().toString().trim();
         String additionalRequirementStr = additionalRequirementTV.getText().toString().trim();
         String licenseRequiredStr = licenseRequiredTV.getText().toString().trim();
-        String environmentStr = environmentTV.getText().toString().trim();
+        String environmentStr = environmentTV.getText().toString().trim();//temperature
+        String jobTypeStr = jobTypeTV.getText().toString().trim();
+        String emailStr = emailTV.getText().toString().trim();
+        String yourNameStr = yourNameTV.getText().toString().trim();
+        String supervisorMobileNumberStr = supervisorMobileNumberTV.getText().toString().trim();
+        String workSiteStreetStr = workSiteStreetTV.getText().toString().trim();
+        String workSiteSuburbStr = workSiteSuburbTV.getText().toString().trim();
+        String workSiteStateStr = workSiteStateTV.getText().toString().trim();
+        String workerQuantityStr = workerQuantityTV.getText().toString().trim();
+        String workingDivisionStr = workingDivisionTV.getText().toString().trim();
+        String startTimeStr = startTimeTV.getText().toString().trim();
+        String endTimeStr = endTimeTV.getText().toString().trim();
 
         //key generate
         String key = databaseReference.push().getKey();
