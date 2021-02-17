@@ -4,32 +4,50 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/expresslogo2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/expresslogo2"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHire">
-        <activity android:name=".SignupActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SigninActivity"/>
+        <activity android:name=".SignupActivity">
+
+        </activity>
+        <activity android:name=".SigninActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
         <activity android:name=".ChatActivity" />
         <activity android:name=".FinalizeMessageActivity" />
         <activity android:name=".SubmissionSummeryActivity" />
         <activity android:name=".FormFillUpActivity4" />
         <activity android:name=".FormFillUpActivity3" />
         <activity android:name=".FormFillUpActivity2" />
-        <activity android:name=".FormFillUpActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".FormFillUpActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".MainActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

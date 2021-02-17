@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFEB3B"
     tools:context=".SubmissionSummeryActivity">
-
+<!--    android:background="#FFEB3B"-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,71 +26,24 @@
 
 <!--        greetings-->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:background="#8BC34A"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
             android:text="Dear Customer,"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:paddingBottom="10dp"
-            android:text="Please, kindly check your form details. You can change your information pressing back button."/>
+            android:background="#8BC34A"
+            android:textColor="#FFFFFF"
+            android:text="Please, kindly check your form details. You can change your information pressing back button. Thank You!"/>
 
-<!--        date fixing-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="From Date: "/>
-            <TextView
-                android:id="@+id/fromDateTVID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="1/1/2021"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="To Date: "/>
-            <TextView
-                android:id="@+id/toDateTVID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="1/1/2021"/>
-        </LinearLayout>
-
-        <!--        .......job position code will be here........-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Job position: "/>
-            <TextView
-                android:id="@+id/jobPositionTVID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="Forklift driver"/>
-        </LinearLayout>
-
-        <!--        .......job position code will be here........-->
+        <!--        .......company name........-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -110,26 +63,12 @@
                 android:text="company name"/>
         </LinearLayout>
 
-<!--        job description-->
+        <!--        company Location-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Job Description: "/>
-        <TextView
-            android:id="@+id/jobDescriptionTVID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Job Description Job Description Job Description"/>
-
-<!--        Location-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Location: "/>
+            android:text="Company Location: "/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -179,7 +118,44 @@
                 android:text="state"/>
         </LinearLayout>
 
-<!--        person to meet-->
+        <!--       your name-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Your Name: "/>
+            <TextView
+                android:id="@+id/yourNameTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="your name"/>
+        </LinearLayout>
+
+        <!--       your email-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Your Email: "/>
+            <TextView
+                android:id="@+id/emailTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="xyz@gmail.com"/>
+        </LinearLayout>
+
+        <!--       your mobile no-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -188,7 +164,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Name of the person to meet: "/>
+                android:text="Your Mobile Number: "/>
+            <TextView
+                android:id="@+id/phoneTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="+61 234567"/>
+        </LinearLayout>
+
+        <!--        person to meet/ supervisor name-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Site Supervisor/Manager Name: "/>
             <TextView
                 android:id="@+id/nameOfThePersonTVID"
                 android:layout_width="wrap_content"
@@ -198,7 +193,50 @@
                 android:text="Mr. John"/>
         </LinearLayout>
 
-<!--        phone no-->
+        <!--     Site Supervisor/Manager phone no-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Site Supervisor/Manager Mobile Number: "/>
+            <TextView
+                android:id="@+id/managerMobileNumberTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="+61 111111"/>
+        </LinearLayout>
+
+        <!--     division/section/department-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Division/Section/Department: "/>
+            <TextView
+                android:id="@+id/divisionTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
+
+        <!--       work site Location-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Work site Location: "/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -206,15 +244,196 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Phone no: "/>
+                android:text="Street: "/>
             <TextView
-                android:id="@+id/phoneTVID"
+                android:id="@+id/workSiteStreetTVID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="+61 234567"/>
+                android:text="street"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Suburb: "/>
+            <TextView
+                android:id="@+id/workSiteSuburbTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="suburb"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="State: "/>
+            <TextView
+                android:id="@+id/workSiteStateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="state"/>
+        </LinearLayout>
+
+        <!--       hiring date fixing-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="From Date: "/>
+            <TextView
+                android:id="@+id/fromDateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="1/1/2021"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="To Date: "/>
+            <TextView
+                android:id="@+id/toDateTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="1/1/2021"/>
+        </LinearLayout>
+
+        <!--        Time table-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Start Time: "/>
+            <TextView
+                android:id="@+id/startTimeTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Start Time"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="End Time: "/>
+            <TextView
+                android:id="@+id/endTimeTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="End Time"/>
+        </LinearLayout>
+
+        <!--        .......job position ........-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Job position: "/>
+            <TextView
+                android:id="@+id/jobPositionTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Forklift driver"/>
+        </LinearLayout>
+
+        <!--        quantity-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Worker Quantity: "/>
+            <TextView
+                android:id="@+id/workerQuantityTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text=""/>
+        </LinearLayout>
+
+        <!--        job type-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Job Type: "/>
+            <TextView
+                android:id="@+id/jobTypeInfoTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Casual"/>
+        </LinearLayout>
+
+        <!--        job description-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Job Description: "/>
+        <TextView
+            android:id="@+id/jobDescriptionTVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Job Description Job Description Job Description"/>
+
+
+
+
+
+
+
+
+
+
+
 
 <!--        PPE-->
         <LinearLayout
@@ -306,7 +525,25 @@
                 android:text="RF Scanner"/>
         </LinearLayout>
 
-<!--        License required-->
+        <!--        temperature-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Environment: "/>
+            <TextView
+                android:id="@+id/temparatureTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Normal"/>
+        </LinearLayout>
+
+        <!--        License required-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -325,48 +562,23 @@
         </LinearLayout>
 
 
-<!--        temperature-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Environment: "/>
-            <TextView
-                android:id="@+id/temparatureTVID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text=""/>
-        </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
+<!--        Two buttons-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:orientation="horizontal"
             android:gravity="center">
 
-<!--            <Button-->
-<!--                android:id="@+id/backSubmissionPageBtnID"-->
-<!--                android:layout_width="150dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Back"-->
-<!--                android:layout_marginRight="20dp"-->
-<!--                app:backgroundTint="#8BC34A"/>-->
+            <Button
+                android:id="@+id/backSubmissionPageBtnID"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Back"
+                app:backgroundTint="#8BC34A" />
 
             <Button
                 android:id="@+id/confirmBtnID"
@@ -374,6 +586,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Confirm"
+                android:layout_marginLeft="5dp"
                 app:backgroundTint="#8BC34A" />
         </LinearLayout>
 
