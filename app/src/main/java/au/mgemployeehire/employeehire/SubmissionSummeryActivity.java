@@ -304,9 +304,36 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         //key generate
         String key = databaseReference.push().getKey();
 
-        JobAdvertisementData jobAdvertisement = new JobAdvertisementData(fromDateStr, toDateStr, jobPositionStr, jobDescriptionStr, companyNameStr, streetStr,
-                suburbStr, stateStr, nameOfThePersonStr, phoneStr, ppeStr, transportRequirementsStr, engRequirementStr,
-                liftingCapacityStr, additionalRequirementStr,licenseRequiredStr,environmentStr);
+        JobAdvertisementData jobAdvertisement = new JobAdvertisementData(
+                companyNameStr,
+                streetStr,
+                suburbStr,
+                stateStr,
+                yourNameStr,
+                emailStr,
+                phoneStr,
+                nameOfThePersonStr,
+                supervisorMobileNumberStr,
+                workingDivisionStr,
+                workSiteStreetStr,
+                workSiteSuburbStr,
+                workSiteStateStr,
+                fromDateStr,
+                toDateStr,
+                startTimeStr,
+                endTimeStr,
+                jobPositionStr,
+                workerQuantityStr,
+                jobTypeStr,
+                jobDescriptionStr,
+                ppeStr,
+                transportRequirementsStr,
+                engRequirementStr,
+                liftingCapacityStr,
+                additionalRequirementStr,
+                environmentStr,
+                licenseRequiredStr
+                );
 
         //sending job advertisement data to database
         databaseReference.child(key).setValue(jobAdvertisement);
