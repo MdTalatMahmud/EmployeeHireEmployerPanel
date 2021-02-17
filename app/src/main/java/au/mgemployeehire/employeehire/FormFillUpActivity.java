@@ -477,7 +477,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                 }
                 additionalRequirements.setText(additionalRequirementsString);
 
-                //license requirements data collect
+                //license requirements data collect..
                 String licenseString = "";
                 if (whiteCard.isChecked()){
                     licenseString += "\n White Card";
