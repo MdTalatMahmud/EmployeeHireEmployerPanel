@@ -21,6 +21,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -403,35 +404,61 @@ public class FormFillUpActivity extends AppCompatActivity {
                 intent.putExtra("fromDate", from_date);
                 intent.putExtra("toDate", to_date);
 
-                //job position
-                int radioID_jobPosition = jobPositionRadioGroup.getCheckedRadioButtonId();
-                radioButtonJobPosition = findViewById(radioID_jobPosition);
-                jobPosition.setText(radioButtonJobPosition.getText());
+                try {
+                    //job position
+                    int radioID_jobPosition = jobPositionRadioGroup.getCheckedRadioButtonId();
+                    radioButtonJobPosition = findViewById(radioID_jobPosition);
+                    jobPosition.setText(radioButtonJobPosition.getText());
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Select job position",Toast.LENGTH_LONG).show();
+                }
 
-                //job type
-                int jobTypeRadioID = radioGroupJobType.getCheckedRadioButtonId();
-                radioButtonjobType = findViewById(jobTypeRadioID);
-                jobType.setText(radioButtonjobType.getText());
+                try {
+                    //job type
+                    int jobTypeRadioID = radioGroupJobType.getCheckedRadioButtonId();
+                    radioButtonjobType = findViewById(jobTypeRadioID);
+                    jobType.setText(radioButtonjobType.getText());
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Select Job Type",Toast.LENGTH_LONG).show();
+                }
 
-                //transport
-                int radioId = radioGroupTransport.getCheckedRadioButtonId();
-                radioButtonTransport = findViewById(radioId);
-                transportTextView.setText(radioButtonTransport.getText());
+                try {
+                    //transport
+                    int radioId = radioGroupTransport.getCheckedRadioButtonId();
+                    radioButtonTransport = findViewById(radioId);
+                    transportTextView.setText(radioButtonTransport.getText());
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Select Transport",Toast.LENGTH_LONG).show();
+                }
 
-                //english requirement
-                int radioID_EngRequ = radioGroupEnglishRequirement.getCheckedRadioButtonId();
-                radioButtonEnglishRequirement = findViewById(radioID_EngRequ);
-                engReqTextView.setText(radioButtonEnglishRequirement.getText());
 
-                //weight lifting
-                int radioId_weightLifting = radioGroupWeightLifting.getCheckedRadioButtonId();
-                radioButtonWeightLifting = findViewById(radioId_weightLifting);
-                weightLiftingTextView.setText(radioButtonWeightLifting.getText());
+                try {
+                    //english requirement
+                    int radioID_EngRequ = radioGroupEnglishRequirement.getCheckedRadioButtonId();
+                    radioButtonEnglishRequirement = findViewById(radioID_EngRequ);
+                    engReqTextView.setText(radioButtonEnglishRequirement.getText());
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Select English Requirement",Toast.LENGTH_LONG).show();
+                }
 
-                //environment
-                int env = radioGroupEnvironment.getCheckedRadioButtonId();
-                radioButtonEnvironment = findViewById(env);
-                environmentTextView.setText(radioButtonEnvironment.getText());
+                try {
+                    //weight lifting
+                    int radioId_weightLifting = radioGroupWeightLifting.getCheckedRadioButtonId();
+                    radioButtonWeightLifting = findViewById(radioId_weightLifting);
+                    weightLiftingTextView.setText(radioButtonWeightLifting.getText());
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Select Lifting Capacity",Toast.LENGTH_LONG).show();
+                }
+
+                try{
+                    //environment
+                    int env = radioGroupEnvironment.getCheckedRadioButtonId();
+                    radioButtonEnvironment = findViewById(env);
+                    environmentTextView.setText(radioButtonEnvironment.getText());
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Select environment",Toast.LENGTH_LONG).show();
+                }
+
 
 
                 //additional requirement data collect
