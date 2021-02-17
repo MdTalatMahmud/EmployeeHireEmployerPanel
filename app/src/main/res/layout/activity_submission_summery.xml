@@ -32,6 +32,7 @@
             android:background="#8BC34A"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
+            android:paddingLeft="5dp"
             android:text="Dear Customer,"/>
         <TextView
             android:layout_width="match_parent"
@@ -41,6 +42,8 @@
             android:paddingBottom="10dp"
             android:background="#8BC34A"
             android:textColor="#FFFFFF"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:text="Please, kindly check your form details. You can change your information pressing back button. Thank You!"/>
 
         <!--        .......company name........-->
@@ -53,6 +56,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Company Name: "/>
             <TextView
                 android:id="@+id/companyNameTVID"
@@ -68,6 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="#F44336"
+            android:textStyle="bold"
             android:text="Company Location: "/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -127,6 +134,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Your Name: "/>
             <TextView
                 android:id="@+id/yourNameTVID"
@@ -145,6 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Your Email: "/>
             <TextView
                 android:id="@+id/emailTVID"
@@ -164,6 +175,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Your Mobile Number: "/>
             <TextView
                 android:id="@+id/phoneTVID"
@@ -183,6 +196,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Site Supervisor/Manager Name: "/>
             <TextView
                 android:id="@+id/nameOfThePersonTVID"
@@ -202,6 +217,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Site Supervisor/Manager Mobile Number: "/>
             <TextView
                 android:id="@+id/managerMobileNumberTVID"
@@ -221,6 +238,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Division/Section/Department: "/>
             <TextView
                 android:id="@+id/divisionTVID"
@@ -236,6 +255,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="#F44336"
+            android:textStyle="bold"
             android:text="Work site Location: "/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -293,6 +314,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:textSize="20dp"
                 android:text="From Date: "/>
             <TextView
@@ -311,6 +334,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="To Date: "/>
             <TextView
                 android:id="@+id/toDateTVID"
@@ -329,6 +354,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Start Time: "/>
             <TextView
                 android:id="@+id/startTimeTVID"
@@ -346,6 +373,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="End Time: "/>
             <TextView
                 android:id="@+id/endTimeTVID"
@@ -359,11 +388,14 @@
         <!--        .......job position ........-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Job position: "/>
             <TextView
                 android:id="@+id/jobPositionTVID"
@@ -382,6 +414,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Worker Quantity: "/>
             <TextView
                 android:id="@+id/workerQuantityTVID"
@@ -400,6 +434,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Job Type: "/>
             <TextView
                 android:id="@+id/jobTypeInfoTVID"
@@ -415,6 +451,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="#F44336"
+            android:textStyle="bold"
             android:text="Job Description: "/>
         <TextView
             android:id="@+id/jobDescriptionTVID"
@@ -424,25 +462,17 @@
             android:textStyle="bold"
             android:text="Job Description Job Description Job Description"/>
 
-
-
-
-
-
-
-
-
-
-
-
 <!--        PPE-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="PPE Requirements: "/>
             <TextView
                 android:id="@+id/ppeTVID"
@@ -456,11 +486,14 @@
 <!--        transport-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Transport requirements: "/>
             <TextView
                 android:id="@+id/transportRequirementsTVID"
@@ -479,6 +512,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="English requirements: "/>
             <TextView
                 android:id="@+id/engRequirementTVID"
@@ -497,6 +532,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Lifting capacity: "/>
             <TextView
                 android:id="@+id/liftingCapacityTVID"
@@ -510,11 +547,14 @@
 <!--        additional requirement-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Additional requirements: "/>
             <TextView
                 android:id="@+id/additionalRequirementTVID"
@@ -528,11 +568,14 @@
         <!--        temperature-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="Environment: "/>
             <TextView
                 android:id="@+id/temparatureTVID"
@@ -546,11 +589,14 @@
         <!--        License required-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textColor="#F44336"
+                android:textStyle="bold"
                 android:text="License required: "/>
             <TextView
                 android:id="@+id/licenseRequiredTVID"
