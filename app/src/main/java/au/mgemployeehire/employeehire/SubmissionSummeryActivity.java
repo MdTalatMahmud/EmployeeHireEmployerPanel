@@ -20,7 +20,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             supervisorMobileNumberTV, yourNameTV, workSiteStreetTV, workSiteSuburbTV,
             workSiteStateTV, workerQuantityTV, workingDivisionTV, startTimeTV, endTimeTV ;//26 variables
 
-    private Button confirmButton;
+    private Button confirmButton, backButton;
     DatabaseReference databaseReference;
 
     @Override
@@ -50,6 +50,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         licenseRequiredTV = findViewById(R.id.licenseRequiredTVID);
         environmentTV = findViewById(R.id.temparatureTVID);
         confirmButton = findViewById(R.id.confirmBtnID);
+        backButton = findViewById(R.id.backSubmissionPageBtnID);
         emailTV = findViewById(R.id.emailTVID);
         supervisorMobileNumberTV = findViewById(R.id.managerMobileNumberTVID);
         yourNameTV = findViewById(R.id.yourNameTVID);
@@ -266,6 +267,14 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 saveDataToDatabase();
+            }
+        });
+
+        //back button functioning
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SubmissionSummeryActivity.super.onBackPressed();
             }
         });
 
