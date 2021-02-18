@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button INeedStaffButton, chatButton;
 
-    @SuppressLint("WrongViewCast")
+    //@SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         chatButton = findViewById(R.id.chatWithHRBtnID);
 
         INeedStaffButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, FormFillUpActivity.class);
+            Intent intent = new Intent(MainActivity.this, MaleFemaleActivity.class);
             startActivity(intent);
         });
 
         chatButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+            Intent intent = new Intent(MainActivity.this, ChatActivity.class);
             startActivity(intent);
         });
 

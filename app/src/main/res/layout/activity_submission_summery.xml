@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
+    android:background="#FFFFFF"
     tools:context=".SubmissionSummeryActivity">
 <!--    android:background="#FFEB3B"-->
     <LinearLayout
@@ -19,6 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#00BCD4"
             android:layout_gravity="center_horizontal"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -29,8 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:background="#8BC34A"
-            android:textColor="#FFFFFF"
+            android:background="#CFF3F8"
             android:textStyle="bold"
             android:paddingLeft="5dp"
             android:text="Dear Customer,"/>
@@ -40,8 +40,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:paddingBottom="10dp"
-            android:background="#8BC34A"
-            android:textColor="#FFFFFF"
+            android:background="#CFF3F8"
             android:paddingRight="5dp"
             android:paddingLeft="5dp"
             android:text="Please, kindly check your form details. You can change your information pressing back button. Thank You!"/>
@@ -56,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Company Name: "/>
             <TextView
@@ -73,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#F44336"
+            android:textColor="#00BCD4"
             android:textStyle="bold"
             android:text="Company Location: "/>
         <LinearLayout
@@ -134,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Your Name: "/>
             <TextView
@@ -154,7 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Your Email: "/>
             <TextView
@@ -175,7 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Your Mobile Number: "/>
             <TextView
@@ -196,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Site Supervisor/Manager Name: "/>
             <TextView
@@ -217,7 +216,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Site Supervisor/Manager Mobile Number: "/>
             <TextView
@@ -238,7 +237,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Division/Section/Department: "/>
             <TextView
@@ -255,7 +254,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#F44336"
+            android:textColor="#00BCD4"
             android:textStyle="bold"
             android:text="Work site Location: "/>
         <LinearLayout
@@ -314,7 +313,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:text="From Date: "/>
@@ -334,7 +333,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="To Date: "/>
             <TextView
@@ -354,7 +353,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Start Time: "/>
             <TextView
@@ -373,7 +372,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="End Time: "/>
             <TextView
@@ -385,16 +384,37 @@
                 android:text="End Time"/>
         </LinearLayout>
 
-        <!--        .......job position ........-->
+        <!--        .......male/female ........-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Male/Female: "/>
+            <TextView
+                android:id="@+id/maleFemaleTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Male"/>
+        </LinearLayout>
+
+        <!--        .......job position ........-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Job position: "/>
             <TextView
@@ -414,7 +434,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Worker Quantity: "/>
             <TextView
@@ -434,7 +454,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Job Type: "/>
             <TextView
@@ -451,7 +471,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#F44336"
+            android:textColor="#00BCD4"
             android:textStyle="bold"
             android:text="Job Description: "/>
         <TextView
@@ -471,7 +491,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="PPE Requirements: "/>
             <TextView
@@ -492,7 +512,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Transport requirements: "/>
             <TextView
@@ -512,7 +532,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="English requirements: "/>
             <TextView
@@ -532,7 +552,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Lifting capacity: "/>
             <TextView
@@ -553,7 +573,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Additional requirements: "/>
             <TextView
@@ -574,7 +594,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="Environment: "/>
             <TextView
@@ -595,7 +615,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="#F44336"
+                android:textColor="#00BCD4"
                 android:textStyle="bold"
                 android:text="License required: "/>
             <TextView
@@ -624,7 +644,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Back"
-                app:backgroundTint="#8BC34A" />
+                app:backgroundTint="#00BCD4" />
 
             <Button
                 android:id="@+id/confirmBtnID"
@@ -633,7 +653,7 @@
                 android:layout_marginBottom="20dp"
                 android:text="Confirm"
                 android:layout_marginLeft="5dp"
-                app:backgroundTint="#8BC34A" />
+                app:backgroundTint="#00BCD4" />
         </LinearLayout>
 
 

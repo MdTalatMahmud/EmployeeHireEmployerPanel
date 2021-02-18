@@ -9,6 +9,9 @@
         android:roundIcon="@drawable/expresslogo2"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHire">
+        <activity android:name=".JobDateTimeSettingActivity"></activity>
+        <activity android:name=".JobPositionSelectionActivity" />
+        <activity android:name=".MaleFemaleActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,17 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity">
-
-        </activity>
+        <activity android:name=".SignupActivity" />
         <activity android:name=".SigninActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-
         <activity android:name=".ChatActivity" />
         <activity android:name=".FinalizeMessageActivity" />
         <activity android:name=".SubmissionSummeryActivity" />
@@ -34,11 +36,13 @@
         <activity android:name=".FormFillUpActivity3" />
         <activity android:name=".FormFillUpActivity2" />
         <activity android:name=".FormFillUpActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".MainActivity">
 

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="20dp"
-    android:background="#FFEB3B"
+    android:background="#FFFFFF"
     tools:context=".FormFillUpActivity">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         android:padding="10dp"
         android:orientation="vertical">
 
-<!--        your company name-->
+        <!--        your company name-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,13 +29,13 @@
                 android:text="Your company name: "/>
             <EditText
                 android:id="@+id/yourCompanyNameETID"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="ex. Mates Group"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
-<!--        Company Location-->
+        <!--        Company Location-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,25 +50,25 @@
 
         <EditText
             android:id="@+id/suburbETID"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Suburb"
             android:layout_marginBottom="10dp"
-            android:background="#F8EB7E"/>
+            android:background="#D6F5FA"/>
         <EditText
             android:id="@+id/streetETID"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Street"
             android:layout_marginBottom="10dp"
-            android:background="#F8EB7E"/>
+            android:background="#D6F5FA"/>
         <EditText
             android:id="@+id/stateETID"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="State"
             android:layout_marginBottom="10dp"
-            android:background="#F8EB7E"/>
+            android:background="#D6F5FA"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -82,13 +82,13 @@
                 android:text="Your name: "/>
             <EditText
                 android:id="@+id/yourNameETID"
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="Mr. Express"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
-<!--        your email-->
+        <!--        your email-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,10 +101,10 @@
                 android:text="Your email: "/>
             <EditText
                 android:id="@+id/yourEmailETID"
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="email@email.com"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
             <TextView
                 android:id="@+id/yourEmailTVID"
                 android:layout_width="wrap_content"
@@ -126,10 +126,10 @@
                 android:text="Your Contact Number: "/>
             <EditText
                 android:id="@+id/phoneETID"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="+61 234567"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
         <!--       Site Supervisor/Manager Name-->
@@ -145,10 +145,10 @@
                 android:text="Site Supervisor/Manager Name: "/>
             <EditText
                 android:id="@+id/nameOfThePersonETID"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="Mr. John Dev"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
         <!--       Supervisor/Manager phone number-->
@@ -164,10 +164,10 @@
                 android:text="Site Supervisor/Manager Mobile number: "/>
             <EditText
                 android:id="@+id/managerPhoneNoETID"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="+61 000000"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
         <!--       Division/Section/Department name-->
@@ -183,10 +183,10 @@
                 android:text="Division/Section/Department: "/>
             <EditText
                 android:id="@+id/divisionETID"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint=""
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
         <!--        Work Site Location-->
@@ -205,74 +205,74 @@
 
         <EditText
             android:id="@+id/workSiteSuburbETID"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Suburb"
             android:layout_marginBottom="10dp"
-            android:background="#F8EB7E"/>
+            android:background="#D6F5FA"/>
         <EditText
             android:id="@+id/workSiteStreetETID"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Street"
             android:layout_marginBottom="10dp"
-            android:background="#F8EB7E"/>
+            android:background="#D6F5FA"/>
         <EditText
             android:id="@+id/workSiteStateETID"
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="State"
             android:layout_marginBottom="10dp"
-            android:background="#F8EB7E"/>
+            android:background="#D6F5FA"/>
 
-<!--        hiring date-->
+        <!--        hiring date-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="Hiring Date:"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="From: "/>
+
+            <TextView
+                android:id="@+id/fromDateID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:text="Select Date "/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text=" To: "/>
+
+            <TextView
+                android:id="@+id/endDateID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:text="Select Date"/>
+
+        </LinearLayout>
+
+        <!--        job time duration-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="From: "/>
-
-        <TextView
-            android:id="@+id/fromDateID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17dp"
             android:textStyle="bold"
-            android:text="Select Date "/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text=" To: "/>
-
-        <TextView
-            android:id="@+id/endDateID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            android:text="Select Date"/>
-
-    </LinearLayout>
-
-<!--        job time duration-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Job Timing:"/>
+            android:text="Job Timing:"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -304,13 +304,13 @@
         </LinearLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Job Position:"
-        android:textStyle="bold"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job Position:"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"/>
 
         <RadioGroup
             android:id="@+id/jobPositionRadioGroup"
@@ -367,59 +367,59 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="Quantity: "/>
+                android:text="Number of Staff: "/>
             <EditText
                 android:id="@+id/workerQuantityETID"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:background="#F8EB7E"
+                android:background="#D6F5FA"
                 android:hint="5"/>
         </LinearLayout>
 
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/warehouseCheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Warehouse" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/warehouseCheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Warehouse" />-->
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/pickPackercheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Pick Packer" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/pickPackercheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Pick Packer" />-->
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/cleanerCheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Cleaner" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/cleanerCheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Cleaner" />-->
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/processWorkerCheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Process Worker" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/processWorkerCheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Process Worker" />-->
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/generalLabourCheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="General Labour" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/generalLabourCheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="General Labour" />-->
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/forkliftDriverCheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Forklift Driver" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/forkliftDriverCheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Forklift Driver" />-->
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/otherCheckBoxID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Other" />-->
+        <!--        <CheckBox-->
+        <!--            android:id="@+id/otherCheckBoxID"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Other" />-->
 
-<!--        job type-->
+        <!--        job type-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -475,7 +475,7 @@
 
 
 
-<!--    form 2-->
+        <!--    form 2-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -496,7 +496,7 @@
                 android:ems="13"
                 android:inputType="textMultiLine"
                 android:hint="Type Here The Job Description"
-                android:background="#F8EB7E"/>
+                android:background="#D6F5FA"/>
         </LinearLayout>
 
 
@@ -507,7 +507,7 @@
 
 
 
-<!--        form 3-->
+        <!--        form 3-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -558,7 +558,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Transport Preference: "
+                android:text="Transport Requirement: "
                 android:textSize="20dp"/>
             <RadioGroup
                 android:id="@+id/transportRadioGroup"
@@ -779,83 +779,128 @@
 
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
 
-<!--        <Button-->
-<!--            android:id="@+id/backBtnID"-->
-<!--            android:layout_width="150dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Back"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            app:backgroundTint="#8BC34A"/>-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/backBtnID"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:layout_marginRight="20dp"
+                    app:backgroundTint="#00BCD4"/>
 
-        <Button
-            android:id="@+id/nextPageBtnID"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="OK"
-            app:backgroundTint="#8BC34A" />
+                <Button
+                    android:id="@+id/nextPageBtnID"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="OK"
+                    app:backgroundTint="#00BCD4" />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/testTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="test"/>
-        <TextView
-            android:id="@+id/transportTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/engRequTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/weightLiftingTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/environmentTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/licenseTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/ppeTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/additionalRequirementTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/jobPositionTVID"
-            android:textSize="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
+            <TextView
+                android:id="@+id/testTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+            <TextView
+                android:id="@+id/transportTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/engRequTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/weightLiftingTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/environmentTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/licenseTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/ppeTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/additionalRequirementTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/jobPositionTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/male_FemaleTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/job_PositionTVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:id="@+id/fromDate_TVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text=""/>
+            <TextView
+                android:id="@+id/toDate_TVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text=""/>
+            <TextView
+                android:id="@+id/startTime_TVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text=""/>
+            <TextView
+                android:id="@+id/endTime_TVID"
+                android:textSize="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text=""/>
 
-    </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>

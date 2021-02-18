@@ -35,7 +35,7 @@ import java.util.TimeZone;
 
 public class FormFillUpActivity extends AppCompatActivity {
 
-    private Button nextPage;
+    private Button nextPage, backButton;
     private TextView fromDate, endDate, startTime, endTime;
     DatePickerDialog.OnDateSetListener setListener, setListener2;
     EditText jobDescription, companyName, suburb, street, state, nameOfThePersonToMeet, phone;
@@ -53,6 +53,8 @@ public class FormFillUpActivity extends AppCompatActivity {
     private TextView ppeRequirements;
     private TextView additionalRequirements;
     private TextView jobPosition, jobType;
+    private TextView male_FemaleTV, job_PositionTV, fromDateTV, toDateTV, startTimeTV, endTimeTV;
+    String maleFemaleString="nothing";
 
 
     //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
@@ -83,8 +85,48 @@ public class FormFillUpActivity extends AppCompatActivity {
         workSiteStateEditText = findViewById(R.id.workSiteStateETID);
         workerQuantityEditText = findViewById(R.id.workerQuantityETID);
         divisionEditText = findViewById(R.id.divisionETID);
+        male_FemaleTV = findViewById(R.id.male_FemaleTVID);
+        job_PositionTV = findViewById(R.id.job_PositionTVID);
+        fromDateTV = findViewById(R.id.fromDate_TVID);
+        toDateTV = findViewById(R.id.toDate_TVID);
+        startTimeTV = findViewById(R.id.startTime_TVID);
+        endTimeTV = findViewById(R.id.endTime_TVID);
 
+        //male/female
+        Bundle maleFemaleBundle = getIntent().getExtras();
+        if (maleFemaleBundle!=null){
+            String maleFemaleStr = maleFemaleBundle.getString("maleFemale");
+            male_FemaleTV.setText(maleFemaleStr);
+        }
 
+        //job position data getting
+        Bundle jobPositionBundle = getIntent().getExtras();
+        if (jobPositionBundle!=null){
+            String jobPosStr = jobPositionBundle.getString("jobPosition");
+            job_PositionTV.setText(jobPosStr);
+        }
+
+        //date getting
+        Bundle fromDateBundle = getIntent().getExtras();
+        if (fromDateBundle!=null){
+            String fd = fromDateBundle.getString("fromDate");
+            fromDateTV.setText(fd);
+        }
+        Bundle toDateBundle = getIntent().getExtras();
+        if (toDateBundle!=null){
+            String td = toDateBundle.getString("toDate");
+            toDateTV.setText(td);
+        }
+        Bundle startTimeBundle = getIntent().getExtras();
+        if (startTimeBundle!=null){
+            String st = startTimeBundle.getString("startTime");
+            startTimeTV.setText(st);
+        }
+        Bundle endTimeBundle = getIntent().getExtras();
+        if (endTimeBundle!=null){
+            String et = endTimeBundle.getString("endTime");
+            endTimeTV.setText(et);
+        }
 
         //radio groups id finding
         jobPositionRadioGroup = findViewById(R.id.jobPositionRadioGroup);
@@ -389,6 +431,15 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         });
 
+        //back button functioning
+        backButton = findViewById(R.id.backBtnID);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FormFillUpActivity.super.onBackPressed();
+            }
+        });
+
         //ok button functioning...........................................................
         nextPage = findViewById(R.id.nextPageBtnID);
         nextPage.setOnClickListener(new View.OnClickListener() {
@@ -396,8 +447,8 @@ public class FormFillUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FormFillUpActivity.this, SubmissionSummeryActivity.class);
                 //putting the values to the Strings
-                String from_date = (String) fromDate.getText();
-                String to_date = (String) endDate.getText();
+                String from_date = (String) fromDateTV.getText();
+                String to_date = (String) toDateTV.getText();
 
                 //passing data
                 //from date & to date
@@ -516,12 +567,15 @@ public class FormFillUpActivity extends AppCompatActivity {
                 ppeRequirements.setText(ppeString);
 
                 //.............................................passing data
+                //male/female
+                String maleFemaleStr = male_FemaleTV.getText().toString();
+                intent.putExtra("maleFemale",maleFemaleStr);
 
                 //time table passing
-                String startTimeStr = startTime.getText().toString();
+                String startTimeStr = startTimeTV.getText().toString();
                 intent.putExtra("startTime",startTimeStr);
 
-                String endTimeStr = endTime.getText().toString();
+                String endTimeStr = endTimeTV.getText().toString();
                 intent.putExtra("endTime",endTimeStr);
 
                 //working division
@@ -556,7 +610,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                 intent.putExtra("email",emailStr);
 
                 //passing job position
-                String jobPositionStr = jobPosition.getText().toString();
+                String jobPositionStr = job_PositionTV.getText().toString();
                 intent.putExtra("jobPostition",jobPositionStr);
 
                 //passing job type

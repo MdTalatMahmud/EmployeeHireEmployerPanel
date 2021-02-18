@@ -18,7 +18,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             suburbTV, stateTV, nameOfThePersonTV, phoneTV, ppeTV, transportRequirementsTV,
             engRequirementTV, liftingCapacityTV, additionalRequirementTV, licenseRequiredTV, environmentTV, emailTV,
             supervisorMobileNumberTV, yourNameTV, workSiteStreetTV, workSiteSuburbTV,
-            workSiteStateTV, workerQuantityTV, workingDivisionTV, startTimeTV, endTimeTV ;//26 variables
+            workSiteStateTV, workerQuantityTV, workingDivisionTV, startTimeTV, endTimeTV, maleFemaleTV ;//26 variables
 
     private Button confirmButton, backButton;
     DatabaseReference databaseReference;
@@ -61,6 +61,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         workingDivisionTV = findViewById(R.id.divisionTVID);
         startTimeTV = findViewById(R.id.startTimeTVID);
         endTimeTV = findViewById(R.id.endTimeTVID);
+        maleFemaleTV = findViewById(R.id.maleFemaleTVID);
 
         //getting the values
         //getting from date
@@ -261,6 +262,13 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             endTimeTV.setText(endTimeStr);
         }
 
+        //male/female
+        Bundle maleFemale = getIntent().getExtras();
+        if (maleFemale!=null){
+            String maleFemaleStr = maleFemale.getString("maleFemale");
+            maleFemaleTV.setText(maleFemaleStr);
+        }
+
 
         //functioning confirm button. Sending data to firebase Database
         confirmButton.setOnClickListener(new View.OnClickListener() {
@@ -277,6 +285,9 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
                 SubmissionSummeryActivity.super.onBackPressed();
             }
         });
+
+
+
 
     }
 
