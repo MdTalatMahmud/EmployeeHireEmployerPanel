@@ -38,14 +38,14 @@ public class MaleFemaleActivity extends AppCompatActivity {
                 Intent intent = new Intent(MaleFemaleActivity.this, JobPositionSelectionActivity.class);
 
                 try{
-                    //environment
+                    //male female
                     int maleFemale = maleFemaleRadioGroup.getCheckedRadioButtonId();
                     maleFemaleRadioButton = findViewById(maleFemale);
                     maleFemaleTextView.setText(maleFemaleRadioButton.getText());
                 }catch (Exception exception){
                     Toast.makeText(getApplicationContext(), "Please, select one",Toast.LENGTH_LONG).show();
                 }
-                //phone no
+                //male female data pass
                 String maleFemaleStr = maleFemaleTextView.getText().toString();
                 intent.putExtra("maleFemale", maleFemaleStr);
 

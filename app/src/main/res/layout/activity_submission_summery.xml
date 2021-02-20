@@ -307,6 +307,13 @@
         </LinearLayout>
 
         <!--       hiring date fixing-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#00BCD4"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Time Duration: "/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -436,7 +443,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:text="Worker Quantity: "/>
+                android:text="Number of Staff: "/>
             <TextView
                 android:id="@+id/workerQuantityTVID"
                 android:layout_width="wrap_content"
@@ -640,7 +647,7 @@
 
             <Button
                 android:id="@+id/backSubmissionPageBtnID"
-                android:layout_width="150dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Back"
@@ -648,7 +655,7 @@
 
             <Button
                 android:id="@+id/confirmBtnID"
-                android:layout_width="150dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:text="Confirm"

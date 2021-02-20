@@ -231,6 +231,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:visibility="gone"
             android:text="Hiring Date:"/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -240,6 +241,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="From: "/>
 
             <TextView
@@ -248,12 +250,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Select Date "/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text=" To: "/>
 
             <TextView
@@ -262,16 +266,18 @@
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Select Date"/>
 
         </LinearLayout>
 
-        <!--        job time duration-->
+        <!--                job time duration-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20dp"
+            android:visibility="gone"
             android:text="Job Timing:"/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -280,6 +286,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text="From: "/>
             <TextView
                 android:id="@+id/startTimeSelectID"
@@ -287,12 +294,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Select Time"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:visibility="gone"
                 android:text=" To: "/>
             <TextView
                 android:id="@+id/endTimeSelectID"
@@ -300,9 +309,11 @@
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 android:text="Select Time"/>
         </LinearLayout>
 
+        <!--        job position-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -310,6 +321,7 @@
             android:text="Job Position:"
             android:textStyle="bold"
             android:layout_marginTop="25dp"
+            android:visibility="gone"
             android:layout_marginBottom="10dp"/>
 
         <RadioGroup
@@ -321,42 +333,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Warehouse"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
             <RadioButton
                 android:id="@+id/pickPackerRadioBtnID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pick Packer"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
             <RadioButton
                 android:id="@+id/cleanerRadioBtnID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cleaner"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
             <RadioButton
                 android:id="@+id/processWorkerRadioBtnID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Process Worker"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
             <RadioButton
                 android:id="@+id/generalLabourRadioBtnID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="General Labour"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
             <RadioButton
                 android:id="@+id/forkliftDriverRadioBtnID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Forklift Driver"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
             <RadioButton
                 android:id="@+id/othersJobPositionRadioBtnID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Other"
+                android:visibility="gone"
                 android:onClick="jobPosition"/>
         </RadioGroup>
 

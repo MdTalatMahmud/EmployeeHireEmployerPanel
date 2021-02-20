@@ -40,6 +40,21 @@ public class JobDateTimeSettingActivity extends AppCompatActivity {
         startTime = findViewById(R.id.startTimeSelectID);
         endTime = findViewById(R.id.endTimeSelectID);
 
+        //getting male/female data
+        Bundle maleFemaleBundle = getIntent().getExtras();
+        if (maleFemaleBundle!=null){
+            String maleFemaleStr = maleFemaleBundle.getString("maleFemale");
+            maleFemaleTextView.setText(maleFemaleStr);
+            //maleFemaleString = maleFemaleStr;
+        }
+
+        //catching job position
+        Bundle jobPosition = getIntent().getExtras();
+        if (jobPosition!=null){
+            String jobPosStr = jobPosition.getString("jobPosition");
+            jobPositionTextView.setText(jobPosStr);
+        }
+
         //startTime TextView functioning
         startTime.setOnClickListener(new View.OnClickListener() {
             @Override

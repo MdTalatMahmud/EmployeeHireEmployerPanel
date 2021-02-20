@@ -359,7 +359,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         databaseReference.child(key).setValue(jobAdvertisement);
         Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(SubmissionSummeryActivity.this, FormFillUpActivity.class);
+        Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
