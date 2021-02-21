@@ -53,17 +53,15 @@
 
         <Button
             android:id="@+id/backMaleFemalePageBtnID"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:text="Back"
             app:backgroundTint="#00BCD4" />
 
         <Button
             android:id="@+id/maleFemaleNextBtnID"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:text="Next"
             android:layout_marginLeft="5dp"
             app:backgroundTint="#00BCD4" />

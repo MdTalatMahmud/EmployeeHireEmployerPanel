@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Your company name: "/>
+                android:text="Company Name: "/>
             <EditText
                 android:id="@+id/yourCompanyNameETID"
                 android:layout_width="300dp"
@@ -35,7 +35,7 @@
                 android:background="#D6F5FA"/>
         </LinearLayout>
 
-        <!--        Company Location-->
+        <!--        Company Location/company address-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Company Location: "/>
+                android:text="Company Address: "/>
         </LinearLayout>
 
         <EditText
@@ -70,6 +70,7 @@
             android:layout_marginBottom="10dp"
             android:background="#D6F5FA"/>
 
+<!--        Company AWARD-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +80,26 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Your name: "/>
+                android:text="Industry AWARD (Optional): "/>
+            <EditText
+                android:id="@+id/awardETID"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Industry AWARD"
+                android:background="#D6F5FA"/>
+        </LinearLayout>
+
+<!--        contact person name-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Contact Person name: "/>
             <EditText
                 android:id="@+id/yourNameETID"
                 android:layout_width="300dp"
@@ -98,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Your email: "/>
+                android:text="Email: "/>
             <EditText
                 android:id="@+id/yourEmailETID"
                 android:layout_width="300dp"
@@ -123,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Your Contact Number: "/>
+                android:text="Contact Phone Number: "/>
             <EditText
                 android:id="@+id/phoneETID"
                 android:layout_width="300dp"
@@ -200,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Work Site Location: "/>
+                android:text="Work Site Location: (Optional)"/>
         </LinearLayout>
 
         <EditText

@@ -26,14 +26,36 @@
             android:text="Summery"/>
 
 <!--        greetings-->
-        <TextView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:background="#CFF3F8"
-            android:textStyle="bold"
-            android:paddingLeft="5dp"
-            android:text="Dear Customer,"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:background="#CFF3F8"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:text="Dear "/>
+            <TextView
+                android:id="@+id/dearJohnTVID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:background="#CFF3F8"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:text="John"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:background="#CFF3F8"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:text=","/>
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,14 +89,14 @@
                 android:text="company name"/>
         </LinearLayout>
 
-        <!--        company Location-->
+        <!--        company Location/company address-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textColor="#00BCD4"
             android:textStyle="bold"
-            android:text="Company Location: "/>
+            android:text="Company Address: "/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -124,7 +146,28 @@
                 android:text="state"/>
         </LinearLayout>
 
-        <!--       your name-->
+        <!--       AWARD-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00BCD4"
+                android:textStyle="bold"
+                android:text="Industry AWARD (Optional): "/>
+            <TextView
+                android:id="@+id/awardTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="AWARD"/>
+        </LinearLayout>
+
+        <!--       your name/Contact Person Name-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -135,7 +178,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:text="Your Name: "/>
+                android:text="Contact Person Name: "/>
             <TextView
                 android:id="@+id/yourNameTVID"
                 android:layout_width="wrap_content"
@@ -155,7 +198,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:text="Your Email: "/>
+                android:text="Email: "/>
             <TextView
                 android:id="@+id/emailTVID"
                 android:layout_width="wrap_content"
@@ -165,7 +208,7 @@
                 android:text="xyz@gmail.com"/>
         </LinearLayout>
 
-        <!--       your mobile no-->
+        <!--       your mobile no/contact phone number-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -176,7 +219,7 @@
                 android:textSize="20dp"
                 android:textColor="#00BCD4"
                 android:textStyle="bold"
-                android:text="Your Mobile Number: "/>
+                android:text="Contact Phone Number: "/>
             <TextView
                 android:id="@+id/phoneTVID"
                 android:layout_width="wrap_content"
@@ -256,7 +299,7 @@
             android:textSize="20dp"
             android:textColor="#00BCD4"
             android:textStyle="bold"
-            android:text="Work site Location: "/>
+            android:text="Work site Location: (Optional)"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -641,7 +684,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal"
             android:gravity="center">
 
@@ -649,7 +693,6 @@
                 android:id="@+id/backSubmissionPageBtnID"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:text="Back"
                 app:backgroundTint="#00BCD4" />
 
@@ -657,7 +700,6 @@
                 android:id="@+id/confirmBtnID"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:text="Confirm"
                 android:layout_marginLeft="5dp"
                 app:backgroundTint="#00BCD4" />

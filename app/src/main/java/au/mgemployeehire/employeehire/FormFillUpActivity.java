@@ -43,7 +43,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     private RadioGroup jobPositionRadioGroup,radioGroupJobType,radioGroupTransport, radioGroupEnglishRequirement, radioGroupWeightLifting, radioGroupEnvironment;
 
     //quantity of staff
-    private EditText yourNameEditText, yourEmailEditText, supervisorMobileNoEditText, workSiteSuburbEditText, workSiteStreetEditText, workSiteStateEditText, workerQuantityEditText, divisionEditText;
+    private EditText awardEditText,yourNameEditText, yourEmailEditText, supervisorMobileNoEditText, workSiteSuburbEditText, workSiteStreetEditText, workSiteStateEditText, workerQuantityEditText, divisionEditText;
 
     private CheckBox whiteCard, truckLicense, forkliftLicense, naLicense; //License requirements CheckBox
     private CheckBox safetyShoes, normalCaveShoes, goggles, safetyHelmet, antiCuttingGloves, boots; //PPE requirements CheckBox
@@ -85,6 +85,7 @@ public class FormFillUpActivity extends AppCompatActivity {
         workSiteStateEditText = findViewById(R.id.workSiteStateETID);
         workerQuantityEditText = findViewById(R.id.workerQuantityETID);
         divisionEditText = findViewById(R.id.divisionETID);
+        awardEditText = findViewById(R.id.awardETID);
         male_FemaleTV = findViewById(R.id.male_FemaleTVID);
         job_PositionTV = findViewById(R.id.job_PositionTVID);
         fromDateTV = findViewById(R.id.fromDate_TVID);
@@ -567,6 +568,10 @@ public class FormFillUpActivity extends AppCompatActivity {
                 ppeRequirements.setText(ppeString);
 
                 //.............................................passing data
+                //company AWARD passing data
+                String awardStr = awardEditText.getText().toString();
+                intent.putExtra("award",awardStr);
+
                 //male/female
                 String maleFemaleStr = male_FemaleTV.getText().toString();
                 intent.putExtra("maleFemale",maleFemaleStr);
@@ -721,21 +726,21 @@ public class FormFillUpActivity extends AppCompatActivity {
         radioButtonEnvironment = findViewById(env);
     }
 
-    //menu adding
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_layout,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.userSignOutMenuID){
-            FirebaseAuth.getInstance().signOut();
-            finish();
-            Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    //menu adding
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_layout,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if (item.getItemId() == R.id.userSignOutMenuID){
+//            FirebaseAuth.getInstance().signOut();
+//            finish();
+//            Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
+//            startActivity(intent);
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }

@@ -93,7 +93,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
         android:gravity="center">
 
@@ -101,7 +101,6 @@
             android:id="@+id/backJobDateTimePageBtnID"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:text="Back"
             app:backgroundTint="#00BCD4" />
 
@@ -109,7 +108,6 @@
             android:id="@+id/JobJobDateTimeNextBtnID"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:text="Next"
             android:layout_marginLeft="5dp"
             app:backgroundTint="#00BCD4" />
