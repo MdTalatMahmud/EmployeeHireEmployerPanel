@@ -7,7 +7,7 @@
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#FFEB3B"
+    android:background="@drawable/signupbackground2"
     tools:context=".MainActivity">
 
     <Button
@@ -15,12 +15,14 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="I Need Staff"
-        app:backgroundTint="#8BC34A" />
+        android:textStyle="bold"
+        app:backgroundTint="#00BCD4" />
     <Button
         android:id="@+id/chatWithHRBtnID"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Chat with HR"
-        app:backgroundTint="#8BC34A" />
+        android:textStyle="bold"
+        app:backgroundTint="#00BCD4" />
 
 </LinearLayout>

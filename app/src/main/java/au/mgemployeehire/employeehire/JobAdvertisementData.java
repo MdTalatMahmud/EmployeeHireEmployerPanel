@@ -29,9 +29,10 @@ public class JobAdvertisementData {
     private String additionalRequirementStr;
     private String environmentStr;
     private String licenseRequiredStr;
+    private String awardStr;
 
     //create constructor
-    public JobAdvertisementData(String companyNameStr, String streetStr, String suburbStr, String stateStr, String yourNameStr, String emailStr, String phoneStr, String nameOfThePersonStr, String supervisorMobileNumberStr, String workingDivisionStr, String workSiteStreetStr, String workSiteSuburbStr, String workSiteStateStr, String fromDateStr, String toDateStr, String startTimeStr, String endTimeStr, String jobPositionStr, String workerQuantityStr, String jobTypeStr, String jobDescriptionStr, String ppeStr, String transportRequirementsStr, String engRequirementStr, String liftingCapacityStr, String additionalRequirementStr, String environmentStr, String licenseRequiredStr) {
+    public JobAdvertisementData(String companyNameStr, String streetStr, String suburbStr, String stateStr, String yourNameStr, String emailStr, String phoneStr, String nameOfThePersonStr, String supervisorMobileNumberStr, String workingDivisionStr, String workSiteStreetStr, String workSiteSuburbStr, String workSiteStateStr, String fromDateStr, String toDateStr, String startTimeStr, String endTimeStr, String jobPositionStr, String workerQuantityStr, String jobTypeStr, String jobDescriptionStr, String ppeStr, String transportRequirementsStr, String engRequirementStr, String liftingCapacityStr, String additionalRequirementStr, String environmentStr, String licenseRequiredStr, String awardStr) {
         this.companyNameStr = companyNameStr;
         this.streetStr = streetStr;
         this.suburbStr = suburbStr;
@@ -60,6 +61,7 @@ public class JobAdvertisementData {
         this.additionalRequirementStr = additionalRequirementStr;
         this.environmentStr = environmentStr;
         this.licenseRequiredStr = licenseRequiredStr;
+        this.awardStr = awardStr;
     }
 
     //getter setter
@@ -288,8 +290,15 @@ public class JobAdvertisementData {
         this.licenseRequiredStr = licenseRequiredStr;
     }
 
+    public String getAwardStr() {
+        return awardStr;
+    }
 
-    //    private String fromDate;
+    public void setAwardStr(String awardStr) {
+        this.awardStr = awardStr;
+    }
+
+//    private String fromDate;
 //    private String toDate;
 //    private String jobPosition;
 //    private String jobDescription;

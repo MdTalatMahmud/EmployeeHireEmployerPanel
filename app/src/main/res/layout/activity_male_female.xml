@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/signupbackground2"
+    tools:context=".MaleFemaleActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male/Female"
+        android:textStyle="bold"
+        android:textColor="#00BCD4"
+        android:textSize="30dp"/>
+    <RadioGroup
+        android:id="@+id/maleFemaleRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/maleRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textSize="20dp"
+            android:onClick="checkMaleFemale"/>
+        <RadioButton
+            android:id="@+id/femaleRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textSize="20dp"
+            android:onClick="checkMaleFemale"/>
+        <RadioButton
+            android:id="@+id/anyRadioBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Any"
+            android:textSize="20dp"
+            android:onClick="checkMaleFemale"/>
+    </RadioGroup>
+    <!--        Two buttons-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/backMaleFemalePageBtnID"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            app:backgroundTint="#00BCD4" />
+
+        <Button
+            android:id="@+id/maleFemaleNextBtnID"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_marginLeft="5dp"
+            app:backgroundTint="#00BCD4" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/maleFemaleTVID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="1dp"
+        android:visibility="invisible"/>
+
+</LinearLayout>

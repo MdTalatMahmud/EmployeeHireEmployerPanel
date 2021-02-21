@@ -21,6 +21,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -34,7 +35,7 @@ import java.util.TimeZone;
 
 public class FormFillUpActivity extends AppCompatActivity {
 
-    private Button nextPage;
+    private Button nextPage, backButton;
     private TextView fromDate, endDate, startTime, endTime;
     DatePickerDialog.OnDateSetListener setListener, setListener2;
     EditText jobDescription, companyName, suburb, street, state, nameOfThePersonToMeet, phone;
@@ -42,7 +43,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     private RadioGroup jobPositionRadioGroup,radioGroupJobType,radioGroupTransport, radioGroupEnglishRequirement, radioGroupWeightLifting, radioGroupEnvironment;
 
     //quantity of staff
-    private EditText yourNameEditText, yourEmailEditText, supervisorMobileNoEditText, workSiteSuburbEditText, workSiteStreetEditText, workSiteStateEditText, workerQuantityEditText, divisionEditText;
+    private EditText awardEditText,yourNameEditText, yourEmailEditText, supervisorMobileNoEditText, workSiteSuburbEditText, workSiteStreetEditText, workSiteStateEditText, workerQuantityEditText, divisionEditText;
 
     private CheckBox whiteCard, truckLicense, forkliftLicense, naLicense; //License requirements CheckBox
     private CheckBox safetyShoes, normalCaveShoes, goggles, safetyHelmet, antiCuttingGloves, boots; //PPE requirements CheckBox
@@ -52,6 +53,8 @@ public class FormFillUpActivity extends AppCompatActivity {
     private TextView ppeRequirements;
     private TextView additionalRequirements;
     private TextView jobPosition, jobType;
+    private TextView male_FemaleTV, job_PositionTV, fromDateTV, toDateTV, startTimeTV, endTimeTV;
+    String maleFemaleString="nothing";
 
 
     //private String warehouseStr="Warehouse",pickPackerStr="Pick Packer",CleanerStr="Cleaner";
@@ -82,8 +85,49 @@ public class FormFillUpActivity extends AppCompatActivity {
         workSiteStateEditText = findViewById(R.id.workSiteStateETID);
         workerQuantityEditText = findViewById(R.id.workerQuantityETID);
         divisionEditText = findViewById(R.id.divisionETID);
+        awardEditText = findViewById(R.id.awardETID);
+        male_FemaleTV = findViewById(R.id.male_FemaleTVID);
+        job_PositionTV = findViewById(R.id.job_PositionTVID);
+        fromDateTV = findViewById(R.id.fromDate_TVID);
+        toDateTV = findViewById(R.id.toDate_TVID);
+        startTimeTV = findViewById(R.id.startTime_TVID);
+        endTimeTV = findViewById(R.id.endTime_TVID);
 
+        //male/female
+        Bundle maleFemaleBundle = getIntent().getExtras();
+        if (maleFemaleBundle!=null){
+            String maleFemaleStr = maleFemaleBundle.getString("maleFemale");
+            male_FemaleTV.setText(maleFemaleStr);
+        }
 
+        //job position data getting
+        Bundle jobPositionBundle = getIntent().getExtras();
+        if (jobPositionBundle!=null){
+            String jobPosStr = jobPositionBundle.getString("jobPosition");
+            job_PositionTV.setText(jobPosStr);
+        }
+
+        //date getting
+        Bundle fromDateBundle = getIntent().getExtras();
+        if (fromDateBundle!=null){
+            String fd = fromDateBundle.getString("fromDate");
+            fromDateTV.setText(fd);
+        }
+        Bundle toDateBundle = getIntent().getExtras();
+        if (toDateBundle!=null){
+            String td = toDateBundle.getString("toDate");
+            toDateTV.setText(td);
+        }
+        Bundle startTimeBundle = getIntent().getExtras();
+        if (startTimeBundle!=null){
+            String st = startTimeBundle.getString("startTime");
+            startTimeTV.setText(st);
+        }
+        Bundle endTimeBundle = getIntent().getExtras();
+        if (endTimeBundle!=null){
+            String et = endTimeBundle.getString("endTime");
+            endTimeTV.setText(et);
+        }
 
         //radio groups id finding
         jobPositionRadioGroup = findViewById(R.id.jobPositionRadioGroup);
@@ -388,6 +432,15 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         });
 
+        //back button functioning
+        backButton = findViewById(R.id.backBtnID);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FormFillUpActivity.super.onBackPressed();
+            }
+        });
+
         //ok button functioning...........................................................
         nextPage = findViewById(R.id.nextPageBtnID);
         nextPage.setOnClickListener(new View.OnClickListener() {
@@ -395,43 +448,69 @@ public class FormFillUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FormFillUpActivity.this, SubmissionSummeryActivity.class);
                 //putting the values to the Strings
-                String from_date = (String) fromDate.getText();
-                String to_date = (String) endDate.getText();
+                String from_date = (String) fromDateTV.getText();
+                String to_date = (String) toDateTV.getText();
 
                 //passing data
                 //from date & to date
                 intent.putExtra("fromDate", from_date);
                 intent.putExtra("toDate", to_date);
 
-                //job position
-                int radioID_jobPosition = jobPositionRadioGroup.getCheckedRadioButtonId();
-                radioButtonJobPosition = findViewById(radioID_jobPosition);
-                jobPosition.setText(radioButtonJobPosition.getText());
+                try {
+                    //job position
+                    int radioID_jobPosition = jobPositionRadioGroup.getCheckedRadioButtonId();
+                    radioButtonJobPosition = findViewById(radioID_jobPosition);
+                    jobPosition.setText(radioButtonJobPosition.getText());
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Select job position",Toast.LENGTH_LONG).show();
+                }
 
-                //job type
-                int jobTypeRadioID = radioGroupJobType.getCheckedRadioButtonId();
-                radioButtonjobType = findViewById(jobTypeRadioID);
-                jobType.setText(radioButtonjobType.getText());
+                try {
+                    //job type
+                    int jobTypeRadioID = radioGroupJobType.getCheckedRadioButtonId();
+                    radioButtonjobType = findViewById(jobTypeRadioID);
+                    jobType.setText(radioButtonjobType.getText());
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Select Job Type",Toast.LENGTH_LONG).show();
+                }
 
-                //transport
-                int radioId = radioGroupTransport.getCheckedRadioButtonId();
-                radioButtonTransport = findViewById(radioId);
-                transportTextView.setText(radioButtonTransport.getText());
+                try {
+                    //transport
+                    int radioId = radioGroupTransport.getCheckedRadioButtonId();
+                    radioButtonTransport = findViewById(radioId);
+                    transportTextView.setText(radioButtonTransport.getText());
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Select Transport",Toast.LENGTH_LONG).show();
+                }
 
-                //english requirement
-                int radioID_EngRequ = radioGroupEnglishRequirement.getCheckedRadioButtonId();
-                radioButtonEnglishRequirement = findViewById(radioID_EngRequ);
-                engReqTextView.setText(radioButtonEnglishRequirement.getText());
 
-                //weight lifting
-                int radioId_weightLifting = radioGroupWeightLifting.getCheckedRadioButtonId();
-                radioButtonWeightLifting = findViewById(radioId_weightLifting);
-                weightLiftingTextView.setText(radioButtonWeightLifting.getText());
+                try {
+                    //english requirement
+                    int radioID_EngRequ = radioGroupEnglishRequirement.getCheckedRadioButtonId();
+                    radioButtonEnglishRequirement = findViewById(radioID_EngRequ);
+                    engReqTextView.setText(radioButtonEnglishRequirement.getText());
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Select English Requirement",Toast.LENGTH_LONG).show();
+                }
 
-                //environment
-                int env = radioGroupEnvironment.getCheckedRadioButtonId();
-                radioButtonEnvironment = findViewById(env);
-                environmentTextView.setText(radioButtonEnvironment.getText());
+                try {
+                    //weight lifting
+                    int radioId_weightLifting = radioGroupWeightLifting.getCheckedRadioButtonId();
+                    radioButtonWeightLifting = findViewById(radioId_weightLifting);
+                    weightLiftingTextView.setText(radioButtonWeightLifting.getText());
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Select Lifting Capacity",Toast.LENGTH_LONG).show();
+                }
+
+                try{
+                    //environment
+                    int env = radioGroupEnvironment.getCheckedRadioButtonId();
+                    radioButtonEnvironment = findViewById(env);
+                    environmentTextView.setText(radioButtonEnvironment.getText());
+                }catch (Exception exception){
+                    Toast.makeText(getApplicationContext(), "Select environment",Toast.LENGTH_LONG).show();
+                }
+
 
 
                 //additional requirement data collect
@@ -450,7 +529,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                 }
                 additionalRequirements.setText(additionalRequirementsString);
 
-                //license requirements data collect
+                //license requirements data collect..
                 String licenseString = "";
                 if (whiteCard.isChecked()){
                     licenseString += "\n White Card";
@@ -489,12 +568,19 @@ public class FormFillUpActivity extends AppCompatActivity {
                 ppeRequirements.setText(ppeString);
 
                 //.............................................passing data
+                //company AWARD passing data
+                String awardStr = awardEditText.getText().toString();
+                intent.putExtra("award",awardStr);
+
+                //male/female
+                String maleFemaleStr = male_FemaleTV.getText().toString();
+                intent.putExtra("maleFemale",maleFemaleStr);
 
                 //time table passing
-                String startTimeStr = startTime.getText().toString();
+                String startTimeStr = startTimeTV.getText().toString();
                 intent.putExtra("startTime",startTimeStr);
 
-                String endTimeStr = endTime.getText().toString();
+                String endTimeStr = endTimeTV.getText().toString();
                 intent.putExtra("endTime",endTimeStr);
 
                 //working division
@@ -529,7 +615,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                 intent.putExtra("email",emailStr);
 
                 //passing job position
-                String jobPositionStr = jobPosition.getText().toString();
+                String jobPositionStr = job_PositionTV.getText().toString();
                 intent.putExtra("jobPostition",jobPositionStr);
 
                 //passing job type
@@ -640,21 +726,21 @@ public class FormFillUpActivity extends AppCompatActivity {
         radioButtonEnvironment = findViewById(env);
     }
 
-    //menu adding
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_layout,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.userSignOutMenuID){
-            FirebaseAuth.getInstance().signOut();
-            finish();
-            Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    //menu adding
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_layout,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if (item.getItemId() == R.id.userSignOutMenuID){
+//            FirebaseAuth.getInstance().signOut();
+//            finish();
+//            Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
+//            startActivity(intent);
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }
