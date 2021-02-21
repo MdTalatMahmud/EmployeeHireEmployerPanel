@@ -48,6 +48,7 @@ public class FormFillUpActivity extends AppCompatActivity {
     private CheckBox whiteCard, truckLicense, forkliftLicense, naLicense; //License requirements CheckBox
     private CheckBox safetyShoes, normalCaveShoes, goggles, safetyHelmet, antiCuttingGloves, boots; //PPE requirements CheckBox
     private CheckBox palletJacket, rfScanner, soundPicking, pickPacking; //additional requirements CheckBox
+    private CheckBox fluentEnglishCheckBox, basicEnglishCheckBox, understandingEnglishCheckBox, readWritingEnglishCheckBox, naEnglishCheckBox;
 
     private TextView licenseRequirements;
     private TextView ppeRequirements;
@@ -259,6 +260,12 @@ public class FormFillUpActivity extends AppCompatActivity {
             }
         };
 
+        //english requirement check box
+        fluentEnglishCheckBox = findViewById(R.id.fluentEngCheckBoxID);
+        basicEnglishCheckBox = findViewById(R.id.basicEngCheckBoxID);
+        understandingEnglishCheckBox = findViewById(R.id.understandingEngCheckBoxID);
+        readWritingEnglishCheckBox = findViewById(R.id.readingWritingEngCheckBoxID);
+        naEnglishCheckBox = findViewById(R.id.naEngCheckBoxID);
 
         //additional CheckBox id finding
         palletJacket = findViewById(R.id.palletJacketID);
@@ -484,14 +491,14 @@ public class FormFillUpActivity extends AppCompatActivity {
                 }
 
 
-                try {
-                    //english requirement
-                    int radioID_EngRequ = radioGroupEnglishRequirement.getCheckedRadioButtonId();
-                    radioButtonEnglishRequirement = findViewById(radioID_EngRequ);
-                    engReqTextView.setText(radioButtonEnglishRequirement.getText());
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(), "Select English Requirement",Toast.LENGTH_LONG).show();
-                }
+//                try {
+//                    //english requirement
+//                    int radioID_EngRequ = radioGroupEnglishRequirement.getCheckedRadioButtonId();
+//                    radioButtonEnglishRequirement = findViewById(radioID_EngRequ);
+//                    engReqTextView.setText(radioButtonEnglishRequirement.getText());
+//                }catch (Exception e){
+//                    Toast.makeText(getApplicationContext(), "Select English Requirement",Toast.LENGTH_LONG).show();
+//                }
 
                 try {
                     //weight lifting
@@ -544,6 +551,25 @@ public class FormFillUpActivity extends AppCompatActivity {
                     licenseString += "\n N/A";
                 }
                 licenseRequirements.setText(licenseString);
+
+                //english requirement
+                String englishRequirementString = "";
+                if (fluentEnglishCheckBox.isChecked()){
+                    englishRequirementString += "\n Fluent";
+                }
+                if (basicEnglishCheckBox.isChecked()){
+                    englishRequirementString += "\n Basic";
+                }
+                if (understandingEnglishCheckBox.isChecked()){
+                    englishRequirementString += "\n Understanding";
+                }
+                if (readWritingEnglishCheckBox.isChecked()){
+                    englishRequirementString += "\n Reading/Writing";
+                }
+                if (naEnglishCheckBox.isChecked()){
+                    englishRequirementString += "\n N/A";
+                }
+                engReqTextView.setText(englishRequirementString);
 
                 //ppe requirements data collect
                 String ppeString = "";
