@@ -23,7 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:text="Summery"/>
+            android:text="Requirement Summery"/>
 
 <!--        greetings-->
         <LinearLayout
@@ -694,7 +694,7 @@
                 android:id="@+id/backSubmissionPageBtnID"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Back"
+                android:text="Edit"
                 app:backgroundTint="#00BCD4" />
 
             <Button

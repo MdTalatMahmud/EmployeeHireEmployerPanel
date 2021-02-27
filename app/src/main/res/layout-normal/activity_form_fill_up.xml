@@ -70,24 +70,6 @@
             android:layout_marginBottom="10dp"
             android:background="#D6F5FA"/>
 
-        <!--        Company AWARD-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="Industry AWARD (Optional): "/>
-            <EditText
-                android:id="@+id/awardETID"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="Industry AWARD"
-                android:background="#D6F5FA"/>
-        </LinearLayout>
 
         <!--        contact person name-->
         <LinearLayout
@@ -512,7 +494,24 @@
                 android:textSize="1dp"/>
         </LinearLayout>
 
-
+        <!--        Company AWARD-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Industry AWARD (Optional): "/>
+            <EditText
+                android:id="@+id/awardETID"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Industry AWARD"
+                android:background="#D6F5FA"/>
+        </LinearLayout>
 
         <!--    form 2-->
         <LinearLayout
@@ -876,7 +875,7 @@
                 android:orientation="horizontal">
                 <Button
                     android:id="@+id/backBtnID"
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:text="Back"
                     android:layout_marginRight="20dp"
@@ -884,7 +883,7 @@
 
                 <Button
                     android:id="@+id/nextPageBtnID"
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:text="OK"
                     app:backgroundTint="#00BCD4" />

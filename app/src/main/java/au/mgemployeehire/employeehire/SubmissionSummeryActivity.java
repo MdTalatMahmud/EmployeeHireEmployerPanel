@@ -335,6 +335,9 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         //key generate
         String key = databaseReference.push().getKey();
 
+        //make child
+        String companyName = companyNameTV.getText().toString();
+
         JobAdvertisementData jobAdvertisement = new JobAdvertisementData(
                 companyNameStr,
                 streetStr,
@@ -368,10 +371,19 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
                 );
 
         //sending job advertisement data to database
-        databaseReference.child(key).setValue(jobAdvertisement);
-        Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+        if (companyName.equals("")){
+            Toast.makeText(getApplicationContext(), "Fill up all the required fields",Toast.LENGTH_LONG).show();
+        }else {
+            databaseReference.child(key).setValue(jobAdvertisement);
+            Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
-        startActivity(intent);
+            Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+//        databaseReference.child(key).setValue(jobAdvertisement);
+//        Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+//
+//        Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+//        startActivity(intent);
     }
 }
