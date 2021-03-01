@@ -18,15 +18,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private EditText signUpEmailEditText, signUpPasswordEditText;
+    private EditText signUpEmailEditText, signUpPasswordEditText, companyNameEditText, companyContactNumberEditText, companyEmailEditText, companySuburbEditText, companyStreetEditText, CompanyStateEditText;
     private TextView gotoSignInTextView;
     private Button signUpButton;
     private ProgressBar progressBarSignUp;
-
+    private FirebaseDatabase database;
+    private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    private FirebaseUser firebaseUser;
+
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +48,20 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         //finding id
         signUpEmailEditText = findViewById(R.id.signupEmailID);
         signUpPasswordEditText = findViewById(R.id.signupPasswordID);
+        companyNameEditText = findViewById(R.id.companyNameID);
+        companyContactNumberEditText = findViewById(R.id.companyContactNoID);
+        companyEmailEditText = findViewById(R.id.companyEmailID);
+        companySuburbEditText = findViewById(R.id.companySuburbID);
+        companyStreetEditText = findViewById(R.id.companyStreetID);
+        CompanyStateEditText = findViewById(R.id.companyStateID);
+
         gotoSignInTextView = findViewById(R.id.gotoSignInTVID);
         signUpButton = findViewById(R.id.signupBtnID);
         progressBarSignUp = findViewById(R.id.signinProgressBarID);
+
+        database = FirebaseDatabase.getInstance();
+        mDatabase = database.getReference("user");
+        mAuth = FirebaseAuth.getInstance();
 
         signUpButton.setOnClickListener(this);
         gotoSignInTextView.setOnClickListener(this);
@@ -65,6 +86,38 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private void userRegister() {
         String email = signUpEmailEditText.getText().toString().trim();
         String password = signUpPasswordEditText.getText().toString().trim();
+        String companyName = companyNameEditText.getText().toString().trim();
+        String companyContactNumber = companyContactNumberEditText.getText().toString().trim();
+        String companyEmail = companyEmailEditText.getText().toString().trim();
+        String companySuburb = companySuburbEditText.getText().toString().trim();
+        String companyStreet = companyStreetEditText.getText().toString().trim();
+        String companyState = CompanyStateEditText.getText().toString().trim();
+
+        user = new User(email, password, companyName, companyContactNumber, companyEmail, companySuburb, companyStreet, companyState);
+        FirebaseUser user1 = null;
+
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("user").child(user_id);
+
+                Map new_post = new HashMap();
+                new_post.put("companyName",companyName);
+                new_post.put("companyContactNumber",companyContactNumber);
+                new_post.put("companyEmail",companyEmail);
+                new_post.put("companySuburb",companySuburb);
+                new_post.put("companyStreet",companyStreet);
+                new_post.put("companyState",companyState);
+                new_post.put("email",email);
+                new_post.put("password",password);
+                current_user_db.setValue(new_post);
+            }
+        });
+
+        //currentUserFunction(user_id);
+//        FirebaseUser user = mAuth.getCurrentUser();
+//        currentUserFunction(user);
 
         if (email.isEmpty()){
             signUpEmailEditText.setError("Enter an email address");
@@ -113,4 +166,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         });
 
     }
+
+//    private void currentUserFunction(String user_id){
+//        //String nn = currentUser.getUid();
+//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = firebaseUser.getUid();
+//        String aa=user_id;
+//        //String keyID = uid;
+//                //mDatabase.push().getKey();
+//        mDatabase.child(aa).setValue(user);
+//    }
 }
