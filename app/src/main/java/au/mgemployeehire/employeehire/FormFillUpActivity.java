@@ -469,7 +469,7 @@ public class FormFillUpActivity extends AppCompatActivity {
                     radioButtonJobPosition = findViewById(radioID_jobPosition);
                     jobPosition.setText(radioButtonJobPosition.getText());
                 }catch (Exception e){
-                    Toast.makeText(getApplicationContext(), "Select job position",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Select job position",Toast.LENGTH_LONG).show();
                 }
 
                 try {

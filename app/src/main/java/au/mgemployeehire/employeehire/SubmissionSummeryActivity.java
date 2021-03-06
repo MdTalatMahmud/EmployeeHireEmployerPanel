@@ -382,6 +382,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         String startTimeStr = startTimeTV.getText().toString().trim();
         String endTimeStr = endTimeTV.getText().toString().trim();
         String awardStr = awardTV.getText().toString().trim();
+        String maleFemaleStr = maleFemaleTV.getText().toString().trim();
 
         //key generate
         String key = databaseReference.push().getKey();
@@ -418,7 +419,9 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
                 additionalRequirementStr,
                 environmentStr,
                 licenseRequiredStr,
-                awardStr
+                awardStr,
+                key,
+                maleFemaleStr
                 );
 
         //sending job advertisement data to database

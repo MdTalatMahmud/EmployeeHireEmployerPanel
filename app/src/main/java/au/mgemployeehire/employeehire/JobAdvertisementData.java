@@ -30,9 +30,12 @@ public class JobAdvertisementData {
     private String environmentStr;
     private String licenseRequiredStr;
     private String awardStr;
+    private String maleFemaleStr;
+
+    private String keyStr;
 
     //create constructor
-    public JobAdvertisementData(String companyNameStr, String streetStr, String suburbStr, String stateStr, String yourNameStr, String emailStr, String phoneStr, String nameOfThePersonStr, String supervisorMobileNumberStr, String workingDivisionStr, String workSiteStreetStr, String workSiteSuburbStr, String workSiteStateStr, String fromDateStr, String toDateStr, String startTimeStr, String endTimeStr, String jobPositionStr, String workerQuantityStr, String jobTypeStr, String jobDescriptionStr, String ppeStr, String transportRequirementsStr, String engRequirementStr, String liftingCapacityStr, String additionalRequirementStr, String environmentStr, String licenseRequiredStr, String awardStr) {
+    public JobAdvertisementData(String companyNameStr, String streetStr, String suburbStr, String stateStr, String yourNameStr, String emailStr, String phoneStr, String nameOfThePersonStr, String supervisorMobileNumberStr, String workingDivisionStr, String workSiteStreetStr, String workSiteSuburbStr, String workSiteStateStr, String fromDateStr, String toDateStr, String startTimeStr, String endTimeStr, String jobPositionStr, String workerQuantityStr, String jobTypeStr, String jobDescriptionStr, String ppeStr, String transportRequirementsStr, String engRequirementStr, String liftingCapacityStr, String additionalRequirementStr, String environmentStr, String licenseRequiredStr, String awardStr, String keyStr, String maleFemaleStr) {
         this.companyNameStr = companyNameStr;
         this.streetStr = streetStr;
         this.suburbStr = suburbStr;
@@ -62,6 +65,9 @@ public class JobAdvertisementData {
         this.environmentStr = environmentStr;
         this.licenseRequiredStr = licenseRequiredStr;
         this.awardStr = awardStr;
+        this.maleFemaleStr = maleFemaleStr;
+
+        this.keyStr = keyStr;
     }
 
     //getter setter
@@ -298,5 +304,19 @@ public class JobAdvertisementData {
         this.awardStr = awardStr;
     }
 
+    public String getKeyStr() {
+        return keyStr;
+    }
 
+    public void setKeyStr(String keyStr) {
+        this.keyStr = keyStr;
+    }
+
+    public String getMaleFemaleStr() {
+        return maleFemaleStr;
+    }
+
+    public void setMaleFemaleStr(String maleFemaleStr) {
+        this.maleFemaleStr = maleFemaleStr;
+    }
 }
