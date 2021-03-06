@@ -22,7 +22,50 @@
         android:layout_height="40dp"
         android:background="#E0F8B2"
         android:inputType="textPassword"
+        android:layout_marginBottom="5dp"
         android:hint="Password"/>
+    <EditText
+        android:id="@+id/companyNameID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Company Name"/>
+    <EditText
+        android:id="@+id/companyContactNoID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Company Contact Number"/>
+    <EditText
+        android:id="@+id/companyEmailID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Company Email"/>
+    <EditText
+        android:id="@+id/companySuburbID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Company Suburb"/>
+    <EditText
+        android:id="@+id/companyStreetID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Company Street"/>
+    <EditText
+        android:id="@+id/companyStateID"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="#E0F8B2"
+        android:layout_marginBottom="5dp"
+        android:hint="Company State"/>
 
     <Button
         android:id="@+id/signupBtnID"

@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/expresslogo3"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeHire">
-        <activity android:name=".JobDateTimeSettingActivity"></activity>
+        <activity android:name=".OneTimeDataGetActivity"></activity>
+        <activity android:name=".JobDateTimeSettingActivity" />
         <activity android:name=".JobPositionSelectionActivity" />
         <activity android:name=".MaleFemaleActivity" />
         <activity android:name=".SplashScreenActivity">

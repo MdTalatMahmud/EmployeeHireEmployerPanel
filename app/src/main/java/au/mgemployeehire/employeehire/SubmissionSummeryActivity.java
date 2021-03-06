@@ -1,5 +1,6 @@
 package au.mgemployeehire.employeehire;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,8 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SubmissionSummeryActivity extends AppCompatActivity{
 
@@ -22,6 +28,10 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
 
     private Button confirmButton, backButton;
     DatabaseReference databaseReference;
+    private FirebaseUser user;
+    private String uid;
+//    FirebaseAuth firebaseAuth;
+//    FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +39,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         setContentView(R.layout.activity_submission_summery);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("JobAdvertisementInfo");
+        //databaseReference1 = FirebaseDatabase.getInstance().getReference("user").child(firebaseAuth.getUid());
 
         //finding id
         fromDateTV = findViewById(R.id.fromDateTVID);
@@ -65,6 +76,10 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         dearJohnTV = findViewById(R.id.dearJohnTVID);
         awardTV = findViewById(R.id.awardTVID);
 
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//        uid = user.getUid();
+
+
         //getting the values
         //getting from date
         Bundle fromDate = getIntent().getExtras();
@@ -93,7 +108,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         if (companyName!=null){
             String companyNameValue = companyName.getString("companyName");
             companyNameTV.setText(companyNameValue);
-        }
+        } //this one I have changed
 
         //getting company suburb
         Bundle suburb = getIntent().getExtras();
@@ -285,6 +300,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 saveDataToDatabase();
+                //test();
             }
         });
 
@@ -299,6 +315,41 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
 
 
 
+    }
+
+    private void test(){
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
+        companyNameTV.setText(uid);
+
+//        firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseDatabase = FirebaseDatabase.getInstance();
+
+//        DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference("user");
+////        databaseReference1 = FirebaseDatabase.getInstance().getReference("test");
+//        databaseReference1.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                String b = uid;
+//                String a = snapshot.child(uid).child("email").getValue(String.class);
+//                //User user2 = snapshot.getValue(User.class);
+//
+//                Toast.makeText(getApplicationContext(), "this "+b,Toast.LENGTH_LONG).show();
+//                companyNameTV.setText(uid);
+//
+//                //companyNameTV.setText(user2.getCompanyName());
+////                String a = user2.toString();
+////                companyNameTV.setText(a);
+////                String company_name = snapshot.child("uid").child("companyName").getValue(String.class);
+////
+////                companyNameTV.setText(user.getEmail());
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
     }
 
     private void saveDataToDatabase() {
@@ -331,6 +382,7 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         String startTimeStr = startTimeTV.getText().toString().trim();
         String endTimeStr = endTimeTV.getText().toString().trim();
         String awardStr = awardTV.getText().toString().trim();
+        String maleFemaleStr = maleFemaleTV.getText().toString().trim();
 
         //key generate
         String key = databaseReference.push().getKey();
@@ -367,7 +419,9 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
                 additionalRequirementStr,
                 environmentStr,
                 licenseRequiredStr,
-                awardStr
+                awardStr,
+                key,
+                maleFemaleStr
                 );
 
         //sending job advertisement data to database
