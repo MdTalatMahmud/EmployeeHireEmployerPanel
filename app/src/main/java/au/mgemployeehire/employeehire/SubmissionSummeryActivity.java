@@ -428,11 +428,50 @@ public class SubmissionSummeryActivity extends AppCompatActivity{
         if (companyName.equals("")){
             Toast.makeText(getApplicationContext(), "Fill up all the required fields",Toast.LENGTH_LONG).show();
         }else {
-            databaseReference.child(key).setValue(jobAdvertisement);
-            Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+            if (jobPositionStr.equals("Warehouse")){
+                databaseReference.child("Warehouse").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else if(jobPositionStr.equals("Pick Packer")){
+                databaseReference.child("Pick Packer").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else if(jobPositionStr.equals("Cleaner")){
+                databaseReference.child("Cleaner").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else if(jobPositionStr.equals("Process Worker")){
+                databaseReference.child("Process Worker").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else if(jobPositionStr.equals("General Labour")){
+                databaseReference.child("General Labour").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else if(jobPositionStr.equals("Forklift Driver")){
+                databaseReference.child("Forklift Driver").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else if(jobPositionStr.equals("Other")){
+                databaseReference.child("Other").child(key).setValue(jobAdvertisement);
+                Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(SubmissionSummeryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
         }
 //        databaseReference.child(key).setValue(jobAdvertisement);
 //        Toast.makeText(getApplicationContext(), "Your job advertisement has been posted",Toast.LENGTH_LONG).show();
