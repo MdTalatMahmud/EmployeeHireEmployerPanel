@@ -65,7 +65,7 @@
             android:background="#CFF3F8"
             android:paddingRight="5dp"
             android:paddingLeft="5dp"
-            android:text="Please, kindly check your form details. You can change your information pressing back button. Thank You!"/>
+            android:text="Thanks for using our online staff booking system! Please, check your form details below. You can change your information by pressing back button any time. Thank you!"/>
 
         <!--        .......company name........-->
 
