@@ -182,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Division/Section/Department: "/>
+                android:text="Department/Section/Shed: "/>
             <EditText
                 android:id="@+id/divisionETID"
                 android:layout_width="300dp"
@@ -202,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:text="Work Site Location: (Optional)"/>
+                android:text="Work Location: (If different location)"/>
         </LinearLayout>
 
         <EditText
@@ -797,7 +797,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperature: "
+                android:text="Worksite Temperature: "
                 android:textSize="20dp"/>
             <RadioGroup
                 android:id="@+id/environmentRadioGroup"
