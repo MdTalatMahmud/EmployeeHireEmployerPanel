@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/signupbackground2"
+    tools:context=".FirstMenuActivity">
+
+    <Button
+        android:id="@+id/expressLabourBtnID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Express Labour Hire"/>
+    <Button
+        android:id="@+id/showMyStaffBtnID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Show My Staff"/>
+    <Button
+        android:id="@+id/whsBtnID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="WHS"/>
+    <Button
+        android:id="@+id/expressAdminBtnID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Express Admin"/>
+
+</LinearLayout>

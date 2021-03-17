@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/signupbackground2"
+    tools:context=".WHSSubMenuActivity">
+
+    <Button
+        android:id="@+id/recordTemperatureButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Record Temperature"/>
+    <Button
+        android:id="@+id/inductionButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Induction"/>
+    <Button
+        android:id="@+id/evaquationPlanButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Evaquation Plan"/>
+    <Button
+        android:id="@+id/incidentReportButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Incident Report"/>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/signupbackground2"
+    tools:context=".ExpressAdminSubMenuActivity">
+
+    <Button
+        android:id="@+id/AccountInqueryButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Account Inquery"/>
+    <Button
+        android:id="@+id/rosterInqueryButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Roster Inquery"/>
+    <Button
+        android:id="@+id/holidayInqueryButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Holiday Inquery"/>
+    <Button
+        android:id="@+id/sickLeaveInqueryButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Sick Leave Inquery"/>
+    <Button
+        android:id="@+id/cOVIDAssistanceButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="COVID Assistance"/>
+    <Button
+        android:id="@+id/staffPPEButtonID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Staff PPE"/>
+
+</LinearLayout>
